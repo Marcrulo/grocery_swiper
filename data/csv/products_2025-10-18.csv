@@ -1,0 +1,394 @@
+data_id,price,brand,category,product_name,units,quantity,unit_type,store_name,image_url,start_date,end_date
+10764946,8.00,Hello Sensitive,Babypleje,Vådservietter,1,100,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_1554x3083_3220x4824_zoom.jpg,2025-10-18,2025-10-24
+10764948,10.00,Hello Sensitive,Babypleje,Skumklude,1,50,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_50x2608_1522x4868_zoom.jpg,2025-10-18,2025-10-24
+10764968,89.00,Fitness Pharma,Kosttilskud,Mineraler,1,250,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3245x4780_4992x6858_zoom.jpg,2025-10-18,2025-10-24
+10764969,89.00,Fitness Pharma,Kosttilskud,Kosttilskud,1,200,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3245x4780_4992x6858_zoom.jpg,2025-10-18,2025-10-24
+10764967,89.00,Fitness Pharma,Fiskeolie,Fiskeolie,1,200,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3245x4780_4992x6858_zoom.jpg,2025-10-18,2025-10-24
+10764950,20.00,Newborn,Bleer,Bleer str 1 2-4 kg,1,28,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_0x4899_1529x6808_zoom.jpg,2025-10-18,2025-10-24
+10764956,30.00,Mini,Bleer,Bleer str 2 3-6 kg,1,38,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_1535x4855_3207x6864_zoom.jpg,2025-10-18,2025-10-24
+10764963,50.00,Midi,Bleer,Bleer str 3 4-9 kg,1,56,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_3251x4855_4948x6840_zoom.jpg,2025-10-18,2025-10-24
+10764964,50.00,Maxi,Bleer,Bleer str 4 7-18 kg,1,50,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_3251x4855_4948x6840_zoom.jpg,2025-10-18,2025-10-24
+10764979,29.00,Libresse,Intimhygiejne,Bind,1,26,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_1585x2846_3295x4855_zoom.jpg,2025-10-18,2025-10-24
+10764980,29.00,Libresse,Intimhygiejne,Trusseindlæg,1,26,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_1585x2846_3295x4855_zoom.jpg,2025-10-18,2025-10-24
+10764965,50.00,Junior,Bleer,Bleer str 5 11-25 kg,1,44,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_3251x4855_4948x6840_zoom.jpg,2025-10-18,2025-10-24
+10764966,50.00,XL,Bleer,Bleer str 6 15-30 kg,1,40,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_3251x4855_4948x6840_zoom.jpg,2025-10-18,2025-10-24
+10764835,12.00,Sun Lolly,Frys selv,Is frys selv - Cola,1,8,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_12x4843_1660x6858_zoom.jpg,2025-10-18,2025-10-24
+10764836,12.00,Sun Lolly,Frys selv,Is frys selv - Vindrue,1,8,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_12x4843_1660x6858_zoom.jpg,2025-10-18,2025-10-24
+10764954,30.00,Junior,Bleer,Bleer str 5 Pants 12-17 kg,1,20,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_1535x4855_3207x6864_zoom.jpg,2025-10-18,2025-10-24
+10764955,30.00,XL,Bleer,Bleer str 6 Pants 15+ kg,1,18,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_1535x4855_3207x6864_zoom.jpg,2025-10-18,2025-10-24
+10764958,30.00,XXL Pants,Bleer,Bleer str 7 17+ kg,1,16,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_1535x4855_3207x6864_zoom.jpg,2025-10-18,2025-10-24
+10764477,20.00,ØGO,Skalæg,Økologiske æg M/L,1,10,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2327x243_4954x2334_zoom.jpg,2025-10-18,2025-10-24
+10764978,49.00,,Husholdningspapir,Toiletpapir,1,24,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_25x4924_1641x6852_zoom.jpg,2025-10-18,2025-10-24
+10764816,39.00,Americano,Kapselkaffe,Kaffekapsler,1,16,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_50x4699_2490x6827_zoom.jpg,2025-10-18,2025-10-24
+10764824,39.00,Flat White,Kapselkaffe,Kaffekapsler,1,16,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_50x4699_2490x6827_zoom.jpg,2025-10-18,2025-10-24
+10764820,39.00,Latte Macchiato Caramel,Kapselkaffe,Kaffekapsler,1,16,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_50x4699_2490x6827_zoom.jpg,2025-10-18,2025-10-24
+10764822,39.00,Cafe Au Lait,Kapselkaffe,Kaffekapsler,1,16,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_50x4699_2490x6827_zoom.jpg,2025-10-18,2025-10-24
+10764785,25.00,Espresso Supremo,Kapselkaffe,Kaffekapsler,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_75x69_3313x2527_zoom.jpg,2025-10-18,2025-10-24
+10764791,25.00,Espresso Ristretto Intensiv,Kapselkaffe,Kaffekapsler,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_75x69_3313x2527_zoom.jpg,2025-10-18,2025-10-24
+10764538,15.00,Samsø,Frugt,Æbler,1,6,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_7_2234x4693_4973x6877_zoom.jpg,2025-10-18,2025-10-24
+10764788,25.00,Espresso Lungo Elegante,Kapselkaffe,Kaffekapsler,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_75x69_3313x2527_zoom.jpg,2025-10-18,2025-10-24
+10764789,25.00,Espresso Ristretto,Kapselkaffe,Kaffekapsler,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_75x69_3313x2527_zoom.jpg,2025-10-18,2025-10-24
+10764790,25.00,Espresso Lungo Profondo,Kapselkaffe,Kaffekapsler,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_75x69_3313x2527_zoom.jpg,2025-10-18,2025-10-24
+10764982,29.00,Tena,Intimhygiejne,Bind,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_1585x2846_3295x4855_zoom.jpg,2025-10-18,2025-10-24
+10764825,39.00,Nescafe Dolce Gusto,Kapselkaffe,Kaffekapsler Starbucks Pumpkin Spice Latte,1,12,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_50x4699_2490x6827_zoom.jpg,2025-10-18,2025-10-24
+10764526,13.00,,Grønt,Agurk,1,3,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_0x2633_3251x4662_zoom.jpg,2025-10-18,2025-10-24
+10764983,29.00,Tena,Intimhygiejne,Trusseindlæg,1,6,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_1585x2846_3295x4855_zoom.jpg,2025-10-18,2025-10-24
+10764518,5.00,,Grønt,Agurk,1,1,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_31x780_2677x2627_zoom.jpg,2025-10-18,2025-10-24
+10764501,5.00,,Grønt,Agurk,1,1,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_2415x3594_3713x5011_zoom.jpg,2025-10-18,2025-10-24
+10764717,59.00,,Stearinlys,Kronelys,1,10,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_34_2296x5200_4738x6804_zoom.jpg,2025-10-18,2025-10-24
+10764536,12.00,Samsø,Grønt,Løg,1,2,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_7_2059x193_4898x2864_zoom.jpg,2025-10-18,2025-10-24
+10764838,10.00,Coca Cola Zero,Sodavand,Cola,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2352x637_4992x2777_zoom.jpg,2025-10-18,2025-10-24
+10764839,10.00,Lemon Zero,Sodavand,Lemonsodavand,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2352x637_4992x2777_zoom.jpg,2025-10-18,2025-10-24
+10764840,10.00,Exotic,Sodavand,Sodavand,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2352x637_4992x2777_zoom.jpg,2025-10-18,2025-10-24
+10764837,10.00,Coca Cola,Sodavand,Cola,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2352x637_4992x2777_zoom.jpg,2025-10-18,2025-10-24
+10764841,10.00,Squash,Sodavand,Appelsinsodavand,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2352x637_4992x2777_zoom.jpg,2025-10-18,2025-10-24
+10764482,65.00,Pepsi Max,Sodavand,Cola 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2396x2346_4961x4618_zoom.jpg,2025-10-18,2025-10-24
+10764480,65.00,Faxe Kondi,Sodavand,Sportssodavand 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2396x2346_4961x4618_zoom.jpg,2025-10-18,2025-10-24
+10764481,65.00,Lime,Sodavand,Cola 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2396x2346_4961x4618_zoom.jpg,2025-10-18,2025-10-24
+10764500,9.00,Levebrød,Rugbrød i Skiver,Solsikkerugbrød,1,1,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_1123x3389_2409x5005_zoom.jpg,2025-10-18,2025-10-24
+10738670,69.00,,Garn,Strikkepinde,1,8,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_257x2327_1760x4406_zoom.jpg,2025-10-04,2025-10-31
+10764831,3.00,Julebryg,Øl,Øl,1,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_1610x4799_3220x6871_zoom.jpg,2025-10-18,2025-10-24
+10764469,9.00,Levebrød,Rugbrød i Skiver,Kernegrov Rugbrød,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_56x3732_2483x6465_zoom.jpg,2025-10-18,2025-10-24
+10764903,79.00,Rød,Øl,Øl 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_3226x4805_4923x6871_zoom.jpg,2025-10-18,2025-10-24
+10764904,79.00,"Grøn 0,0",Alkoholfrie Øl,Øl - Alkoholfri 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_3226x4805_4923x6871_zoom.jpg,2025-10-18,2025-10-24
+10764901,79.00,Classic,Øl,Øl 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_3226x4805_4923x6871_zoom.jpg,2025-10-18,2025-10-24
+10764902,79.00,Grøn,Øl,Øl 24 pk.,24,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_3226x4805_4923x6871_zoom.jpg,2025-10-18,2025-10-24
+10764519,10.00,Salling,Grønt,Broccoli,1,1,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_2652x593_4979x2646_zoom.jpg,2025-10-18,2025-10-24
+10764467,9.00,Levebrød,Sandwich & Toastbrød,Multikerne Sandwichbrød,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_56x3732_2483x6465_zoom.jpg,2025-10-18,2025-10-24
+10764833,12.00,Pink,Sodavand,Lemonsodavand,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2309x2777_4948x4824_zoom.jpg,2025-10-18,2025-10-24
+10764834,12.00,ØGO,Sodavand,Hindbærsodavand,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2309x2777_4948x4824_zoom.jpg,2025-10-18,2025-10-24
+10764537,18.00,Samsø,Grønt,Kartofler,1,1,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_7_2009x2814_4929x4680_zoom.jpg,2025-10-18,2025-10-24
+10764832,12.00,ØGO,Sodavand,Lemonsodavand,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_2309x2777_4948x4824_zoom.jpg,2025-10-18,2025-10-24
+10764540,6.00,Samsø,Grønt,Rødløg,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_7_37x4755_2334x6821_zoom.jpg,2025-10-18,2025-10-24
+10764535,12.00,Samsø,Grønt,Knoldselleri,1,1,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_7_31x69_2047x2584_zoom.jpg,2025-10-18,2025-10-24
+10764703,25.00,,Køkkenredskaber,Olie/eddike flaske,1,2,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_2564x0_4673x2384_zoom.jpg,2025-10-18,2025-10-24
+10764547,8.00,ØGO,Pasta,Fuldkornsspaghetti,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_11_3631x5078_4941x6886_zoom.jpg,2025-10-18,2025-10-24
+10764466,9.00,Levebrød,Boller & Morgenbrød,Multikerneboller,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_56x3732_2483x6465_zoom.jpg,2025-10-18,2025-10-24
+10764468,9.00,Levebrød,Boller & Morgenbrød,Chiaboller,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_56x3732_2483x6465_zoom.jpg,2025-10-18,2025-10-24
+10764510,3.50,ØGO,Juice,Æblejuice,1,0,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_1834x4655_4998x6815_zoom.jpg,2025-10-18,2025-10-24
+10764671,35.00,,Køkkenartikler,Kagedåse,1,2,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_244x128_4925x3116_zoom.jpg,2025-10-18,2025-10-24
+10764585,18.00,Klar & Klassisk,Klar Suppe,Hønsekødssuppe,1,1,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2427x2428_4904x4687_zoom.jpg,2025-10-18,2025-10-24
+10764586,18.00,Klar & Klassisk,Klar Suppe,Oksekødssuppe,1,1,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2427x2428_4904x4687_zoom.jpg,2025-10-18,2025-10-24
+10764557,19.00,Løgismose,Syrnet morgenmad,Appelsin Yoghurt ,1,1,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_1685x2131_3313x4728_zoom.jpg,2025-10-18,2025-10-24
+10764559,19.00,Løgismose,Syrnet morgenmad,Pære & Banan Yoghurt ,1,1,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_1685x2131_3313x4728_zoom.jpg,2025-10-18,2025-10-24
+10764668,59.00,,Service,Børneservice,1,3,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_3232x4850_4819x6910_zoom.jpg,2025-10-18,2025-10-24
+10764660,59.00,,Diverse legetøj,Kuffert,1,3,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_212x3002_2865x5241_zoom.jpg,2025-10-18,2025-10-24
+10764656,5.00,,RTD,Pineapple Flavor Cocktail,1,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_18_2906x2318_4949x6853_zoom.jpg,2025-10-18,2025-10-24
+10764654,5.00,,RTD,Raspberry Flavor Cocktail,1,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_18_2906x2318_4949x6853_zoom.jpg,2025-10-18,2025-10-24
+10764655,5.00,,RTD,Lemon Flavor Cocktail,1,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_18_2906x2318_4949x6853_zoom.jpg,2025-10-18,2025-10-24
+10764677,40.00,,Sokker/Strømper,Strømper,1,2,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_31_2979x3548_4770x6812_zoom.jpg,2025-10-18,2025-10-24
+10764465,49.00,Bistronne,Fjerkræ,And,1,2,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_2496x3894_4917x6384_zoom.jpg,2025-10-18,2025-10-24
+10764583,29.00,innocent,Juice,Tropisk Juice,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2344x4940_4990x6804_zoom.jpg,2025-10-18,2025-10-24
+10764588,29.00,innocent,Juice,Æblejuice,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2344x4940_4990x6804_zoom.jpg,2025-10-18,2025-10-24
+10764589,29.00,innocent,Juice,Appelsinjuice,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2344x4940_4990x6804_zoom.jpg,2025-10-18,2025-10-24
+10764974,11.00,Nordic Spirit,"Sæbe, bad, dusch",Flydende sæbe,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_50x811_3238x2839_zoom.jpg,2025-10-18,2025-10-24
+10764534,22.00,,Grønt,Græskar,1,1,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_87x4680_3051x6864_zoom.jpg,2025-10-18,2025-10-24
+10764545,9.00,Næmt,Dej Køl,Pizzadej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_11_2214x55_4860x2677_zoom.jpg,2025-10-18,2025-10-24
+10764896,12.00,Scoop,Koncentreret Saft,Hindbærsmag Læskedrik ,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_31x2833_2396x4818_zoom.jpg,2025-10-18,2025-10-24
+10764898,12.00,Fun Light,Koncentreret Saft,Hindbær & Orange Læskedrik,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_31x2833_2396x4818_zoom.jpg,2025-10-18,2025-10-24
+10764899,12.00,Fun Light,Koncentreret Saft,Citron Lime Læskedrik,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_31x2833_2396x4818_zoom.jpg,2025-10-18,2025-10-24
+10764582,12.00,Becel,Fedtstoffer,Margarine-flydende,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_114x2612_2483x4834_zoom.jpg,2025-10-18,2025-10-24
+10764897,12.00,Fun Light,Koncentreret Saft,Ananas Læskedrik,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_31x2833_2396x4818_zoom.jpg,2025-10-18,2025-10-24
+10764684,30.00,Mutti,Grønt,Tomater,1,1,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_3226x5304_4967x6821_zoom.jpg,2025-10-18,2025-10-24
+10764577,25.00,Athena,Syrnet morgenmad,Græsk Yoghurt 2%,1,1,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2361x2489_4901x4826_zoom.jpg,2025-10-18,2025-10-24
+10764578,25.00,Athena,Syrnet morgenmad,Græsk Yoghurt 10%,1,1,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2361x2489_4901x4826_zoom.jpg,2025-10-18,2025-10-24
+10764539,25.00,Heinz,Ketchup,Ketchup,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_11_212x3621_2198x5982_zoom.jpg,2025-10-18,2025-10-24
+10764576,25.00,Athena,Syrnet morgenmad,Græsk Yoghurt 0%,1,1,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2361x2489_4901x4826_zoom.jpg,2025-10-18,2025-10-24
+10764549,9.00,Næmt,Dej Køl,Pølsehornsdej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_11_57x5860_2410x6837_zoom.jpg,2025-10-18,2025-10-24
+10764603,5.00,Happy Zoo,Juice,Jordbær & Banan Smoothie ,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_90x4891_2458x6845_zoom.jpg,2025-10-18,2025-10-24
+10764574,5.00,Cheasy,Mellemmåltider,Vanilje Skyr ,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_49x886_2581x2652_zoom.jpg,2025-10-18,2025-10-24
+10764572,5.00,Cheasy,Mellemmåltider,Mango & Lime Skyr ,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_49x886_2581x2652_zoom.jpg,2025-10-18,2025-10-24
+10764484,89.00,,Australske vine,Australsk Rødvin,1,3,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2340x4674_4967x6833_zoom.jpg,2025-10-18,2025-10-24
+10764486,89.00,,Australske vine,Australsk Rosevin,1,3,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2340x4674_4967x6833_zoom.jpg,2025-10-18,2025-10-24
+10764487,89.00,,Italienske vine,Italiensk Rødvin,1,3,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2340x4674_4967x6833_zoom.jpg,2025-10-18,2025-10-24
+10764485,89.00,,Australske vine,Australsk Hvidvin,1,3,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_2340x4674_4967x6833_zoom.jpg,2025-10-18,2025-10-24
+10764584,20.00,,Færdigretter Frost,Halloween Nuggets,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_250x961_2409x3052_zoom.jpg,2025-10-18,2025-10-24
+10764580,12.00,Bakersfield,Dybfrost Brød,Hvidløgsbrød,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2958x643_4998x2471_zoom.jpg,2025-10-18,2025-10-24
+10764642,16.00,Grovhakket,Postej og Paté,Leverpostej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_2458x2563_4860x5184_zoom.jpg,2025-10-18,2025-10-24
+10764502,16.00,Grovhakket,Postej og Paté,Leverpostej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_3681x3757_4967x5086_zoom.jpg,2025-10-18,2025-10-24
+10764657,11.97,Kohberg,Fastfoodbrød,Fuldkorn Burgerboller,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_18_106x4818_3028x6886_zoom.jpg,2025-10-18,2025-10-24
+10764990,11.00,Fabulosa ,Rengøringsmidler,Rengøring - universal,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_50x811_3238x2839_zoom.jpg,2025-10-18,2025-10-24
+10764743,10.00,Popz,Popcorn,Popcorn Salted,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_31x2328_1591x4655_zoom.jpg,2025-10-18,2025-10-24
+10764973,35.00,Sanex,"Sæbe, bad, dusch",Bodyshampoo,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3176x2802_4998x4805_zoom.jpg,2025-10-18,2025-10-24
+10764977,69.00,Biotex,Vaskemiddel,Vaskemiddel-flydende,1,1,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_1685x4805_3288x6852_zoom.jpg,2025-10-18,2025-10-24
+10764921,119.00,,Spanske vine,Spansk Hvidvin,1,3,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_2577x2602_4998x4811_zoom.jpg,2025-10-18,2025-10-24
+10764922,119.00,,Spanske vine,Spansk Rødvin,1,3,krt.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_2577x2602_4998x4811_zoom.jpg,2025-10-18,2025-10-24
+10764503,20.00,Bragagnolo,Pasta,Pasta,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_1248x5373_2421x6877_zoom.jpg,2025-10-18,2025-10-24
+10764522,20.00,Rose,Kylling,Kyllingeunderlår,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_2377x2815_4909x4834_zoom.jpg,2025-10-18,2025-10-24
+10764575,10.00,LavAzza,Iste & Iskaffe,Iskaffe,1,0,ds.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2467x780_4762x2620_zoom.jpg,2025-10-18,2025-10-24
+10764672,20.00,Pastificio Di Martino,Pasta,Pasta,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_19x1204_2465x3095_zoom.jpg,2025-10-18,2025-10-24
+10764742,10.00,Popz,Popcorn,Popcorn Smørsmag,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_31x2328_1591x4655_zoom.jpg,2025-10-18,2025-10-24
+10764745,10.00,Popz,Popcorn,Popcorn Paprika Flavour,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_31x2328_1591x4655_zoom.jpg,2025-10-18,2025-10-24
+10764744,10.00,Popz,Popcorn,Popcorn 50% mindre fedt,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_31x2328_1591x4655_zoom.jpg,2025-10-18,2025-10-24
+10764604,35.00,Les Desserts,Is,Triple Chocolate is,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2440x4705_4923x6840_zoom.jpg,2025-10-18,2025-10-24
+10764587,35.00,Les Desserts,Is,Baileys is,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2440x4705_4923x6840_zoom.jpg,2025-10-18,2025-10-24
+10764605,35.00,Les Desserts,Is,Stracciatella is,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2440x4705_4923x6840_zoom.jpg,2025-10-18,2025-10-24
+10764606,35.00,Les Desserts,Is,Jordbær og marengs is,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_2440x4705_4923x6840_zoom.jpg,2025-10-18,2025-10-24
+10764472,15.00,Thai Cube,Færdigretter Frost,Panang Curry Chicken,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764475,15.00,Indian Cube,Færdigretter Frost,Butter Chicken,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764506,15.00,ØGO,Boller & Morgenbrød,Surdejsboller,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_3232x19_4998x2540_zoom.jpg,2025-10-18,2025-10-24
+10764470,15.00,Thai Cube,Færdigretter Frost,Sweet Chili Chicken Teriyaki,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764473,15.00,Thai Cube,Færdigretter Frost,Red Curry Chicken,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764474,15.00,Indian Cube,Færdigretter Frost,Chicken Tikka Masala,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764556,35.00,Velsmag,Kylling,Kyllingeoverlår,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_2471x4843_4961x6846_zoom.jpg,2025-10-18,2025-10-24
+10764890,15.00,Grape,Sodavand,Sodavand,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_31x686_2377x2839_zoom.jpg,2025-10-18,2025-10-24
+10764909,15.00,Coca Cola,Sodavand,Sodavand,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_23_31x686_2377x2839_zoom.jpg,2025-10-18,2025-10-24
+10764581,15.00,K-salat,Saucer,Bearnaisesauce,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_44x3176_2365x4687_zoom.jpg,2025-10-18,2025-10-24
+10764471,15.00,Thai Cube,Færdigretter Frost,Creamy Tom Yom Chicken & Noodles ,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764683,20.00,Bonduelle,Grønt,Majs,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_1666x5311_3295x6864_zoom.jpg,2025-10-18,2025-10-24
+10764579,12.00,Becel,Fedtstoffer,Margarine-fast Omega 3 Let,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_114x2612_2483x4834_zoom.jpg,2025-10-18,2025-10-24
+10764571,24.95,Velsmag,Grisekød,Ribbensteg,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_19x150_2390x1554_zoom.jpg,2025-10-18,2025-10-24
+10764543,24.95,Velsmag,Grisekød,Nakkefilet,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_19x150_2390x1554_zoom.jpg,2025-10-18,2025-10-24
+10764719,15.00,Pågen,Kager,Gifflar kanel,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2421x4649_4942x6840_zoom.jpg,2025-10-18,2025-10-24
+10764497,18.00,Hatting,Sandwich & Toastbrød,Klapper Havre Sandwich ,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_1192x1410_2446x3033_zoom.jpg,2025-10-18,2025-10-24
+10764520,15.00,Velsmag,Grisekød,Hakket grisekød 14-18%,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_65x234_2410x2351_zoom.jpg,2025-10-18,2025-10-24
+10764478,15.00,Velsmag,Grisekød,Hakket grisekød 14-18%,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_50x193_2315x2365_zoom.jpg,2025-10-18,2025-10-24
+10764523,20.00,Rose,Kylling,Hakket kylling 7-10%,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_2377x2815_4909x4834_zoom.jpg,2025-10-18,2025-10-24
+10764464,10.00,Bakkedal,Fedtstoffer,Smørbar,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_2458x1672_4767x3838_zoom.jpg,2025-10-18,2025-10-24
+10764566,10.00,Løgismose,Mellemmåltider,Mango & Passionsfrugt Skyr ,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_81x4639_1742x6829_zoom.jpg,2025-10-18,2025-10-24
+10764567,10.00,Løgismose,Mellemmåltider,Jordbær og Rabarber Skyr ,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_81x4639_1742x6829_zoom.jpg,2025-10-18,2025-10-24
+10764568,10.00,Løgismose,Mellemmåltider,Mango & Passionsfrygt Acidophilus Skyr,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_81x4639_1742x6829_zoom.jpg,2025-10-18,2025-10-24
+10764698,25.00,Trope,Snacknødder & Nøddeblandinger,Peanuts,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764713,10.00,Dinner Kitt,Færdigretter,Turkish Dürum,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_25x5254_1666x6815_zoom.jpg,2025-10-18,2025-10-24
+10764498,25.00,Heinz,Mayonnaise,Seriously Good Mayonnaise,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_2465x1435_3731x3064_zoom.jpg,2025-10-18,2025-10-24
+10764641,16.00,Bacon,Postej og Paté,Leverpostej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_2458x2563_4860x5184_zoom.jpg,2025-10-18,2025-10-24
+10764640,16.00,Fransk,Postej og Paté,Leverpostej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_2458x2563_4860x5184_zoom.jpg,2025-10-18,2025-10-24
+10764651,7.17,ØGO,Riskiks,Majskiks med Havsalt,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_17_2524x430_4884x3686_zoom.jpg,2025-10-18,2025-10-24
+10764941,5.00,ØGO,Babymad,Smoothie,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_2508x0_4998x1697_zoom.jpg,2025-10-18,2025-10-24
+10764525,25.00,,Tørret Frugt,Figner,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_3120x4687_4861x6846_zoom.jpg,2025-10-18,2025-10-24
+10764521,39.00,Green Dates,Tørret Frugt,Dadler,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_3114x2677_4998x4630_zoom.jpg,2025-10-18,2025-10-24
+10764720,15.00,Pågen,Kager,Gifflar Raspberry Vanilla,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2421x4649_4942x6840_zoom.jpg,2025-10-18,2025-10-24
+10764722,15.00,Pågen,Kager,Gifflar Vanilje,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2421x4649_4942x6840_zoom.jpg,2025-10-18,2025-10-24
+10764590,29.00,innocent,Juice,Ingefærshot,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_2344x4940_4990x6804_zoom.jpg,2025-10-18,2025-10-24
+10764596,25.00,Casa Tarradellas,Pizza Fersk,Chicken Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764597,25.00,Casa Tarradellas,Pizza Fersk,Serrano Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764648,11.97,ØGO,Pålægssalat,Hummus,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_17_41x698_2336x3987_zoom.jpg,2025-10-18,2025-10-24
+10764610,12.00,Buko Smelte,Specialost,Smøreost Champignonost,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_114x0_4998x2880_zoom.jpg,2025-10-18,2025-10-24
+10764511,12.00,ØGO,Postej og Paté,Kyllingeleverpostej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_62x4537_1828x6840_zoom.jpg,2025-10-18,2025-10-24
+10764512,12.00,ØGO,Postej og Paté,Leverpostej,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_62x4537_1828x6840_zoom.jpg,2025-10-18,2025-10-24
+10764609,12.00,Buko Smelte,Specialost,Smøreost Skinkeost,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_114x0_4998x2880_zoom.jpg,2025-10-18,2025-10-24
+10764607,12.00,Buko Smelte,Specialost,Smøreost Rejeost,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_114x0_4998x2880_zoom.jpg,2025-10-18,2025-10-24
+10764608,12.00,Buko Smelte,Specialost,Smøreost Rejeost 8%,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_114x0_4998x2880_zoom.jpg,2025-10-18,2025-10-24
+10764618,12.00,Buko Smelte,Specialost,Smøreost Baconost,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_114x0_4998x2880_zoom.jpg,2025-10-18,2025-10-24
+10764619,12.00,Buko Smelte,Specialost,Smøreost Krydderost,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_114x0_4998x2880_zoom.jpg,2025-10-18,2025-10-24
+10764513,7.50,Fellino,Madlavningsost,Mozzarella,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_5_3207x3208_4998x5541_zoom.jpg,2025-10-18,2025-10-24
+10764594,25.00,Casa Tarradellas,Pizza Fersk,Ham & Chesse Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764595,25.00,Casa Tarradellas,Pizza Fersk,4 Cheese Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764600,25.00,Casa Tarradellas,Pizza Fersk,Carbonara Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764592,25.00,Casa Tarradellas,Pizza Fersk,Pepperoni Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764593,25.00,Casa Tarradellas,Pizza Fersk,Barbecue Pizza,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_19_25x4799_2421x6796_zoom.jpg,2025-10-18,2025-10-24
+10764702,25.00,Trope,Tørret Frugt,Bananchips,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764550,69.00,,Kylling,Kylling,1,1,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_1616x3089_3195x4811_zoom.jpg,2025-10-18,2025-10-24
+10764530,13.00,,Grønt,Gulerødder,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_0x2633_3251x4662_zoom.jpg,2025-10-18,2025-10-24
+10764926,49.00,,Tyske vine,Tysk Mousserende Vin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_56x44_2552x2677_zoom.jpg,2025-10-18,2025-10-24
+10764925,49.00,,Tyske vine,Tysk Hvidvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_56x44_2552x2677_zoom.jpg,2025-10-18,2025-10-24
+10764923,49.00,,Tyske vine,Tysk Rødvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_56x44_2552x2677_zoom.jpg,2025-10-18,2025-10-24
+10764633,10.00,La Campagna,Postej og Paté,Paté Hvidløg,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764527,20.00,Velsmag,Grisekød,Wokstrimler,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_49x2978_2524x4826_zoom.jpg,2025-10-18,2025-10-24
+10764652,13.37,Mamone,Tørret Frugt,Tranebær,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_18_33x869_1994x4574_zoom.jpg,2025-10-18,2025-10-24
+10764718,15.00,Pågen,Kager,Vanillas,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2421x4649_4942x6840_zoom.jpg,2025-10-18,2025-10-24
+10764544,55.00,Velsmag,Grisekød,Grisekoteletter,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_2409x100_4911x1560_zoom.jpg,2025-10-18,2025-10-24
+10764524,69.00,,Kylling,Kyllingebryst,1,1,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_2442x4883_4852x6886_zoom.jpg,2025-10-18,2025-10-24
+10764649,34.96,Hansens,Is,Vanilje is,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_17_57x4077_2898x6861_zoom.jpg,2025-10-18,2025-10-24
+10764514,14.00,Egelykke,Fedtstoffer,Smørbar,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_5_1691x4406_3844x6178_zoom.jpg,2025-10-18,2025-10-24
+10764496,5.00,Gul bordpak,"Pålæg, skiveskåret",Jægerpølse - Den lette,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_25x2403_2377x4680_zoom.jpg,2025-10-18,2025-10-24
+10764682,20.00,Bonduelle,Grønt,Majs,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_1666x5311_3295x6864_zoom.jpg,2025-10-18,2025-10-24
+10764493,5.00,Gul bordpak,"Pålæg, skiveskåret",Salami,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_25x2403_2377x4680_zoom.jpg,2025-10-18,2025-10-24
+10764495,5.00,Gul bordpak,"Pålæg, skiveskåret",Kyllingepølse - Den Lette,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_25x2403_2377x4680_zoom.jpg,2025-10-18,2025-10-24
+10764602,5.00,Danonino,Mellemmåltider,Jordbær Yoghurt ,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_90x4891_2458x6845_zoom.jpg,2025-10-18,2025-10-24
+10764488,5.00,Gul bordpak,"Pålæg, skiveskåret",Røget Medister - Den Lette,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_25x2403_2377x4680_zoom.jpg,2025-10-18,2025-10-24
+10764920,55.00,,Italienske vine,Italiensk Hvidvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_2508x75_4998x2658_zoom.jpg,2025-10-18,2025-10-24
+10764917,55.00,,Italienske vine,Italiensk Rødvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_2508x75_4998x2658_zoom.jpg,2025-10-18,2025-10-24
+10764914,55.00,,Sydafrikanske vine,Sydafrikansk Rødvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_2508x75_4998x2658_zoom.jpg,2025-10-18,2025-10-24
+10764678,10.00,Dinner Kitt,Risretter,Mexican Tacos,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_25x5254_1666x6815_zoom.jpg,2025-10-18,2025-10-24
+10764476,15.00,Kitchen Joy,Færdigretter Frost,Gyoza med Teriyaki,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_1_31x1460_2433x3726_zoom.jpg,2025-10-18,2025-10-24
+10764643,25.00,Langelænder,300 g - 599 g Normalpakke Pølser,Hotdogpølser,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_179x5143_4998x6869_zoom.jpg,2025-10-18,2025-10-24
+10764646,25.00,Langelænder,300 g - 599 g Normalpakke Pølser,Wienerpølser,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_179x5143_4998x6869_zoom.jpg,2025-10-18,2025-10-24
+10764699,25.00,Trope,Tørret Frugt,Frugtmix,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764674,25.00,Trope,Tørret Frugt,Tranebær,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764558,35.00,Velsmag,Kylling,Kyllingebrystfilet,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_2471x4843_4961x6846_zoom.jpg,2025-10-18,2025-10-24
+10764570,55.00,Velsmag,Kalve- og grisekød,Hakket kalv og grisekød 8-12%,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_2409x100_4911x1560_zoom.jpg,2025-10-18,2025-10-24
+10764987,20.00,Poly Swing,Styling,Hårspray,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10764528,20.00,Velsmag,Grisekød,Nakkekoteletter,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_49x2978_2524x4826_zoom.jpg,2025-10-18,2025-10-24
+10764984,20.00,Taft,Styling,Hårspray,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10764986,20.00,Poly Swing,Styling,Hårlak,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10764650,10.46,ØGO,Oliven,Oliven,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_17_2898x3735_4901x6935_zoom.jpg,2025-10-18,2025-10-24
+10764704,25.00,Trope,Tørret Frugt,Rosiner,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764706,25.00,Trope,Tørret Frugt,Abrikoser,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764701,25.00,Trope,Tørret Frugt,Kokostern,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764647,25.00,Pølsemesteren,300 g - 599 g Normalpakke Pølser,Brunchpølser,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_179x5143_4998x6869_zoom.jpg,2025-10-18,2025-10-24
+10764708,25.00,Trope,Tørret Frugt,Dadler,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_2433x1273_4929x3239_zoom.jpg,2025-10-18,2025-10-24
+10764494,5.00,Gul bordpak,"Pålæg, skiveskåret",Sønderjysk Spegepølse,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_25x2403_2377x4680_zoom.jpg,2025-10-18,2025-10-24
+10764491,5.00,Gul bordpak,"Pålæg, skiveskåret",Kødpølse - Den lette,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_25x2403_2377x4680_zoom.jpg,2025-10-18,2025-10-24
+10764714,10.00,Toffypops,Kiks,Toffypops Karamelfyld,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_3276x2390_4998x4655_zoom.jpg,2025-10-18,2025-10-24
+10764681,30.00,,Grød,Grød,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_3307x3245_4998x5248_zoom.jpg,2025-10-18,2025-10-24
+10764531,13.00,,Grønt,Tomater,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_0x2633_3251x4662_zoom.jpg,2025-10-18,2025-10-24
+10764529,13.00,Salling,Grønt,Selleristænger,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_0x2633_3251x4662_zoom.jpg,2025-10-18,2025-10-24
+10764532,13.00,,Grønt,Peberfrugt,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_6_0x2633_3251x4662_zoom.jpg,2025-10-18,2025-10-24
+10764938,65.00,,Mousserende,Fransk Mousserende Vin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_25x2696_2583x4818_zoom.jpg,2025-10-18,2025-10-24
+10764676,65.00,Olivaena,Olier,Olivenolie,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_69x3133_1710x5223_zoom.jpg,2025-10-18,2025-10-24
+10764936,65.00,,Franske vine,Fransk Rødvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_25x2696_2583x4818_zoom.jpg,2025-10-18,2025-10-24
+10764939,65.00,,Franske vine,Fransk Hvidvin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_25x2696_2583x4818_zoom.jpg,2025-10-18,2025-10-24
+10764517,35.00,Amora,Kaffe,Kaffe Formalet,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_5_1922x1772_4000x4499_zoom.jpg,2025-10-18,2025-10-24
+10764617,80.00,Mammen,Skæreost,Skæreost Guldost 45+,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_2939x2872_4933x6837_zoom.jpg,2025-10-18,2025-10-24
+10764546,99.00,Danpo,Kylling,Kyllingebrystfilet,1,1,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_2440x1579_4948x2995_zoom.jpg,2025-10-18,2025-10-24
+10764723,45.00,I Like Mix,Slik,Slikposer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2415x112_4986x2421_zoom.jpg,2025-10-18,2025-10-24
+10764725,45.00,Matador Mix,Slik,Slikposer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2415x112_4986x2421_zoom.jpg,2025-10-18,2025-10-24
+10764727,45.00,Stjernemix,Slik,Slikposer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2415x112_4986x2421_zoom.jpg,2025-10-18,2025-10-24
+10764746,13.00,Taffel,Chips,Sour Cream & Onion Chips,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764750,13.00,Taffel,Chips,Havsalt Chips,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764751,13.00,Taffel,Chips,Original Chips,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764724,45.00,Mega Bite Mix,Slik,Slikposer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2415x112_4986x2421_zoom.jpg,2025-10-18,2025-10-24
+10764728,45.00,Click Mix,Slik,Slikposer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2415x112_4986x2421_zoom.jpg,2025-10-18,2025-10-24
+10764726,45.00,Matador Mix,Slik,Slikpose Dark,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_2415x112_4986x2421_zoom.jpg,2025-10-18,2025-10-24
+10764612,12.00,Mon Ami,Specialost,Camembert,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_187x2701_2955x4924_zoom.jpg,2025-10-18,2025-10-24
+10764611,12.00,Mon Ami,Specialost,Brieost,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_187x2701_2955x4924_zoom.jpg,2025-10-18,2025-10-24
+10764573,59.00,Premieur,Grisekød,Bacon,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_9_2951x4162_4836x6852_zoom.jpg,2025-10-18,2025-10-24
+10764807,99.00,Gold,Kaffe,Kaffebønner,1,1,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_2433x4643_4961x6877_zoom.jpg,2025-10-18,2025-10-24
+10764808,99.00,ØGO,Kaffe,Kaffebønner,1,1,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_2433x4643_4961x6877_zoom.jpg,2025-10-18,2025-10-24
+10764802,99.00,Crema,Kaffe,Kaffebønner,1,1,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_2433x4643_4961x6877_zoom.jpg,2025-10-18,2025-10-24
+10764972,15.00,Sanex,Deodorant,Deospray,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3220x318_4998x2846_zoom.jpg,2025-10-18,2025-10-24
+10764629,10.00,La Campagna,"Pålæg, skiveskåret",Schwarzwaldskinke,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764507,10.00,ØGO,Frugtpålæg,Frugtstænger,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_1647x150_3282x2608_zoom.jpg,2025-10-18,2025-10-24
+10764644,25.00,Sønderjyske Fristelser,Pålægssalat,Hønsesalat,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_49x299_2792x2457_zoom.jpg,2025-10-18,2025-10-24
+10764565,25.00,Løgismose,Sødemiddel,Sirup,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_1693x4647_3354x6853_zoom.jpg,2025-10-18,2025-10-24
+10764636,25.00,Sønderjyske Fristelser,Pålægssalat,Finthakket  Skinkesalat,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_49x299_2792x2457_zoom.jpg,2025-10-18,2025-10-24
+10764752,13.00,Taffel,Snacks,Chicken Pomm´s Snacks,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764749,13.00,Taffel,Snacks,Super Snack Holiday,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764504,13.00,ØGO,Saucer,Basilikum Pesto,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_2458x5311_3644x6896_zoom.jpg,2025-10-18,2025-10-24
+10764748,13.00,Taffel,Snacks,Osterejer med Ægte Cheddar,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764533,69.00,Velsmag,Oksekød,Hakket oksekød 8-12%,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_10_106x4924_2491x6886_zoom.jpg,2025-10-18,2025-10-24
+10764505,16.00,Næmt,Toppings,Kyllingestrimler,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_3650x5342_4923x6846_zoom.jpg,2025-10-18,2025-10-24
+10764561,30.00,Løgismose,Marmelade,Rabarbermarmelade,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_3297x2327_4868x4712_zoom.jpg,2025-10-18,2025-10-24
+10764560,30.00,Løgismose,Marmelade,Solbærmarmelade,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_3297x2327_4868x4712_zoom.jpg,2025-10-18,2025-10-24
+10764562,30.00,Løgismose,Marmelade,Jordbærmarmelade,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_3297x2327_4868x4712_zoom.jpg,2025-10-18,2025-10-24
+10764563,30.00,Løgismose,Marmelade,Appelsinmarmelade,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_3297x2327_4868x4712_zoom.jpg,2025-10-18,2025-10-24
+10764794,55.00,Mellemristet,Kaffe,Kaffe Formalet,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_94x2552_4898x4643_zoom.jpg,2025-10-18,2025-10-24
+10764795,55.00,Blanding 72,Kaffe,Kaffe Formalet,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_94x2552_4898x4643_zoom.jpg,2025-10-18,2025-10-24
+10764515,45.00,Velsmag,Oksekød,Hakket oksekød 14-18%,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_5_100x3819_2340x5928_zoom.jpg,2025-10-18,2025-10-24
+10764479,79.00,Original,Likør,Likør,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_2_75x4668_2384x6883_zoom.jpg,2025-10-18,2025-10-24
+10764564,85.00,Løgismose,Mousserende,Mousserende Vin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_3313x4720_4909x6886_zoom.jpg,2025-10-18,2025-10-24
+10764753,13.00,Taffel,Snacks,SuperCrunch  Snacks,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x4655_2465x6840_zoom.jpg,2025-10-18,2025-10-24
+10764639,12.00,Den Grønne Slagter,"Pålæg, skiveskåret",Kyllingebryst,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_81x2457_2385x5103_zoom.jpg,2025-10-18,2025-10-24
+10764613,24.00,Cheesemakers Treasures,Skæreost,Skæreost Hav,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_122x4777_3061x6861_zoom.jpg,2025-10-18,2025-10-24
+10764615,24.00,Cheesemakers Treasures,Skæreost,Skæreost Topas,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_122x4777_3061x6861_zoom.jpg,2025-10-18,2025-10-24
+10764616,24.00,Cheesemakers Treasures,Skæreost,Skæreost Opal,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_122x4777_3061x6861_zoom.jpg,2025-10-18,2025-10-24
+10764614,24.00,Cheesemakers Treasures,Skæreost,Skæreost Brilliant,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_14_122x4777_3061x6861_zoom.jpg,2025-10-18,2025-10-24
+10764812,99.00,Espresso,Kaffe,Kaffebønner,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_2433x4643_4961x6877_zoom.jpg,2025-10-18,2025-10-24
+10764810,99.00,Crema,Kaffe,Kaffebønner,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_2433x4643_4961x6877_zoom.jpg,2025-10-18,2025-10-24
+10764976,20.00,Taft,Styling,Hårmousse,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10764985,20.00,Poly Swing,Styling,Hårmousse,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10764800,55.00,Blanding 95,Kaffe,Kaffe Formalet,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_94x2552_4898x4643_zoom.jpg,2025-10-18,2025-10-24
+10764792,55.00,Original,Kaffe,Kaffe Formalet,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_94x2552_4898x4643_zoom.jpg,2025-10-18,2025-10-24
+10764653,10.74,Center,Chokolade,Chokoladeruller Toffee,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_18_1734x601_4933x2156_zoom.jpg,2025-10-18,2025-10-24
+10764516,14.00,Choco Bella,Chokolade,Chokoladeplade Mørk,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_5_312x1966_2290x4343_zoom.jpg,2025-10-18,2025-10-24
+10764928,99.00,Gammel Dansk,Bitter,Bitter,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_62x4680_4998x6846_zoom.jpg,2025-10-18,2025-10-24
+10764927,99.00,Red Label,Whisky,Whisky,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_62x4680_4998x6846_zoom.jpg,2025-10-18,2025-10-24
+10764930,99.00,Spiced Gold,Rom,Rom,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_62x4680_4998x6846_zoom.jpg,2025-10-18,2025-10-24
+10764931,99.00,Smirnoff,Vodka,Vodka,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_62x4680_4998x6846_zoom.jpg,2025-10-18,2025-10-24
+10764934,99.00,Taffel Akvavit,Snaps,Akvavit,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_62x4680_4998x6846_zoom.jpg,2025-10-18,2025-10-24
+10764933,99.00,London Dry Gin,Gin,Gin,1,0,fl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_24_62x4680_4998x6846_zoom.jpg,2025-10-18,2025-10-24
+10764735,10.00,Saltlinser,Chokolade,Dragée,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764732,10.00,Brazil,Slik,Mini Brazil,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764734,10.00,Crazy Candy Frogs,Slik,Bolsjer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764634,10.00,La Campagna,"Pålæg, skiveskåret",Salchichón,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764542,15.00,Zanetti,Specialost,Burrata Italiana,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_11_2336x5290_3614x6886_zoom.jpg,2025-10-18,2025-10-24
+10764638,12.00,Den Grønne Slagter,"Pålæg, skiveskåret",Hamburgerryg,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_81x2457_2385x5103_zoom.jpg,2025-10-18,2025-10-24
+10764499,12.00,Den Grønne Slagter,"Pålæg, skiveskåret",Hamburgerryg,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_3_3650x1448_4842x3183_zoom.jpg,2025-10-18,2025-10-24
+10764645,12.00,Den Grønne Slagter,Vegetarpålæg,Veggiepålæg Peberfrugt,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_81x2457_2385x5103_zoom.jpg,2025-10-18,2025-10-24
+10764541,16.00,Tulip,Toppings,Pepperoni,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_11_3476x2457_4909x4036_zoom.jpg,2025-10-18,2025-10-24
+10738666,8.00,Yarn & Friends,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_39_44x0_4998x6892_zoom.jpg,2025-10-04,2025-10-31
+10764730,10.00,Carletti,Slik,P-Tærter Original,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764731,10.00,Carletti,Slik,P-tærter Karamel,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764733,10.00,Carletti,Slik,Skumbananer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764690,10.00,The Protein Kitchen,Instant morgenmad,Instant Oatmeal Banana & Cocoa,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_1722x3251_3245x5304_zoom.jpg,2025-10-18,2025-10-24
+10764680,10.00,The Protein Kitchen,Instant morgenmad,Instant Oatmeal Blueberry & Banana,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_1722x3251_3245x5304_zoom.jpg,2025-10-18,2025-10-24
+10764729,10.00,Carletti,Slik,P-Tærter Extra Dark,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_1566x2409_3270x4668_zoom.jpg,2025-10-18,2025-10-24
+10764687,10.00,The Protein Kitchen,Instant morgenmad,Instant Oatmeal Apple & Cinnamon,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_20_1722x3251_3245x5304_zoom.jpg,2025-10-18,2025-10-24
+10764637,12.00,Den Grønne Slagter,"Pålæg, skiveskåret",Rullepølse med Løg & Krydderier,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_16_81x2457_2385x5103_zoom.jpg,2025-10-18,2025-10-24
+10738681,69.00,,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_3291x4397_4768x6600_zoom.jpg,2025-10-04,2025-10-31
+10764552,39.00,Velsmag,Fersk fisk,Rødspættefilet,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_25x1585_2421x2995_zoom.jpg,2025-10-18,2025-10-24
+10764551,39.00,Velsmag,Fersk fisk,Laksefilet,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_25x1585_2421x2995_zoom.jpg,2025-10-18,2025-10-24
+10764554,35.00,Løgismose,Specialost,Jysk Hede,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_98x2489_1669x4598_zoom.jpg,2025-10-18,2025-10-24
+10764569,35.00,Løgismose,Specialost,Aged Havarti,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_12_98x2489_1669x4598_zoom.jpg,2025-10-18,2025-10-24
+10764736,8.00,Guldbarre,Chokolade,Chokoladebar Mørk Chokolade,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x62_2415x2452_zoom.jpg,2025-10-18,2025-10-24
+10764740,8.00,Guldbarre,Chokolade,Chokoladebar Orangeknas,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x62_2415x2452_zoom.jpg,2025-10-18,2025-10-24
+10764737,8.00,Guldbarre,Chokolade,Chokoladebar Hasselnød,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x62_2415x2452_zoom.jpg,2025-10-18,2025-10-24
+10764739,8.00,Guldbarre,Chokolade,Chokoladebar Mælkechokolade,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x62_2415x2452_zoom.jpg,2025-10-18,2025-10-24
+10764738,8.00,Guldbarre,Chokolade,Chokoladebar Saltkaramel,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x62_2415x2452_zoom.jpg,2025-10-18,2025-10-24
+10764741,8.00,Guldbarre,Chokolade,Chokoladebar Knas,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_21_56x62_2415x2452_zoom.jpg,2025-10-18,2025-10-24
+10764598,5.00,MilkSlice,Mellemmåltider,Cool Snacks,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_90x4891_2458x6845_zoom.jpg,2025-10-18,2025-10-24
+10764624,59.00,Premieur,Rejer og andre skaldyr,Rejer,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_2458x5087_4974x6845_zoom.jpg,2025-10-18,2025-10-24
+10764508,36.00,ØGO,Pålægspølser,Oksespegepølse med Peber,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_44x2147_1828x4437_zoom.jpg,2025-10-18,2025-10-24
+10764509,36.00,ØGO,Pålægspølser,Spegepølse Mild,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_4_44x2147_1828x4437_zoom.jpg,2025-10-18,2025-10-24
+10764548,29.00,Løgismose,Fjerkræ,Andelår,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_3164x3070_4986x4799_zoom.jpg,2025-10-18,2025-10-24
+10764599,5.00,Oreo,Mellemmåltider,Cool Snacks,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_90x4891_2458x6845_zoom.jpg,2025-10-18,2025-10-24
+10764591,5.00,Munchmallow,Mellemmåltider,Cool Snacks,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_13_90x4891_2458x6845_zoom.jpg,2025-10-18,2025-10-24
+10764553,149.00,Velsmag,Kalvekød,Kalvegrydesteg,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_8_50x3052_1604x4843_zoom.jpg,2025-10-18,2025-10-24
+10764623,59.00,Premieur,Rejer og andre skaldyr,Rejer,1,0,bg.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_2458x5087_4974x6845_zoom.jpg,2025-10-18,2025-10-24
+10764625,10.00,La Campagna,"Pålæg, skiveskåret",Salami Milano Salame,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764628,10.00,La Campagna,"Pålæg, skiveskåret",Lufttørret Skinke,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764631,10.00,La Campagna,"Pålæg, skiveskåret",Jamon Serrano,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764632,10.00,La Campagna,"Pålæg, skiveskåret",Chorizo,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764635,10.00,La Campagna,"Pålæg, skiveskåret",Skinke,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764626,10.00,La Campagna,"Pålæg, skiveskåret",Salami Spicy Ventricina,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764627,10.00,La Campagna,"Pålæg, skiveskåret",Mortadella,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10764630,10.00,La Campagna,Pålægspølser,Fuet,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_33x3279_2532x6869_zoom.jpg,2025-10-18,2025-10-24
+10738667,10.00,,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_221x318_1822x2424_zoom.jpg,2025-10-04,2025-10-31
+10764989,20.00,Taft,Styling,Hårvoks,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10764622,35.00,Premieur,Røget og gravad,Laks,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_2442x2172_4844x5135_zoom.jpg,2025-10-18,2025-10-24
+10764620,35.00,Bådsmand,Røget og gravad,Laks,1,0,bk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_2670x218_4868x2245_zoom.jpg,2025-10-18,2025-10-24
+10764970,15.00,Sanex,Deodorant,Deo Roll-on,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3220x318_4998x2846_zoom.jpg,2025-10-18,2025-10-24
+10764971,15.00,Sanex Men,Deodorant,Deo Roll-on,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_3220x318_4998x2846_zoom.jpg,2025-10-18,2025-10-24
+10738679,30.00,,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_1645x4424_3291x6662_zoom.jpg,2025-10-04,2025-10-31
+10764942,6.00,ØGO,Babymad,Babymad,1,0,ps.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_25_3332x1947_4929x4824_zoom.jpg,2025-10-18,2025-10-24
+10764621,35.00,Premieur,Røget og gravad,Laks i skiver,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_15_2442x2172_4844x5135_zoom.jpg,2025-10-18,2025-10-24
+10738668,20.00,,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_1769x274_3238x2371_zoom.jpg,2025-10-04,2025-10-31
+10738669,40.00,Yarn & Friends,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_3220x35_4910x2300_zoom.jpg,2025-10-04,2025-10-31
+10738674,20.00,Yarn & Friends,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_41_168x177_4883x7039_zoom.jpg,2025-10-04,2025-10-31
+10738680,20.00,,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_274x4539_1698x6573_zoom.jpg,2025-10-04,2025-10-31
+10738672,20.00,,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_1716x4441_3273x6609_zoom.jpg,2025-10-04,2025-10-31
+10764797,55.00,Classic,Instant Kaffe,Instant Kaffe,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_94x2552_4898x4643_zoom.jpg,2025-10-18,2025-10-24
+10764799,55.00,Koffeinfri,Instant Kaffe,Instant Kaffe,1,0,gl.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_22_94x2552_4898x4643_zoom.jpg,2025-10-18,2025-10-24
+10738676,30.00,Yarn & Friends,Garn,Garn,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_1893x212_4821x2344_zoom.jpg,2025-10-04,2025-10-31
+10764988,20.00,Taft,Styling,Hårpudder,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_26_69x2877_1691x4899_zoom.jpg,2025-10-18,2025-10-24
+10738673,59.00,,Garn,Garnskål,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_248x4450_1734x6565_zoom.jpg,2025-10-04,2025-10-31
+10738678,30.00,,Syartikler,Syartikler,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_195x2371_2495x4424_zoom.jpg,2025-10-04,2025-10-31
+10764675,129.00,,Outdoor,Gummistøvler,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_31_212x177_4884x3539_zoom.jpg,2025-10-18,2025-10-24
+10764679,40.00,,Sokker/Strømper,Strømper,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_31_212x3539_3061x6804_zoom.jpg,2025-10-18,2025-10-24
+10764697,30.00,,Cykeltilbehør,Rygsætovertræk,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_147x4745_3175x6853_zoom.jpg,2025-10-18,2025-10-24
+10764705,69.00,,Boligtekstiler,Vådliggerlagen,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_195x2384_2475x4639_zoom.jpg,2025-10-18,2025-10-24
+10764712,199.00,,Lys/lyskæder,Lyskæder,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_34_49x47_4998x3491_zoom.jpg,2025-10-18,2025-10-24
+10764685,20.00,Greenfield,Sportstilbehør,Refleksbånd,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_195x3116_1856x4932_zoom.jpg,2025-10-18,2025-10-24
+10764711,10.00,,Papir,Kort,1,0,pk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_204x4590_2507x6780_zoom.jpg,2025-10-18,2025-10-24
+10764658,50.00,,Baby,Højdemåler,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_28_0x454_4965x6894_zoom.jpg,2025-10-18,2025-10-24
+10764662,69.00,,"Billeder, plakater mm.",Billeder,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_2882x4427_4746x6763_zoom.jpg,2025-10-18,2025-10-24
+10764673,35.00,,Køkkenartikler,Drikkeflaske,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_244x128_4925x3116_zoom.jpg,2025-10-18,2025-10-24
+10764689,40.00,,Cykeltilbehør,Sadelovertræk,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_3126x4964_4835x6837_zoom.jpg,2025-10-18,2025-10-24
+10764693,75.00,,Cykeltilbehør,Cykellygtesæt,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_41x80_4933x3149_zoom.jpg,2025-10-18,2025-10-24
+10764695,30.00,,Cykeltilbehør,Cykelhjelmovertræk,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_147x4745_3175x6853_zoom.jpg,2025-10-18,2025-10-24
+10764700,30.00,,Køkkenartikler,Køleskabsopbevaring,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_187x283_2507x2441_zoom.jpg,2025-10-18,2025-10-24
+10764710,129.00,,Diverse møbler,Puf,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_2418x4639_4705x6796_zoom.jpg,2025-10-18,2025-10-24
+10764715,15.00,,Optænding,Lighter,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_34_130x3434_2458x5209_zoom.jpg,2025-10-18,2025-10-24
+10764721,20.00,,Stearinlys,Havelys,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_34_2532x3580_4746x5143_zoom.jpg,2025-10-18,2025-10-24
+10738675,60.00,,Diverse bøger,Hobbybøger,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_257x257_1796x2424_zoom.jpg,2025-10-04,2025-10-31
+10764659,49.00,,Opbevaring,Opbevaringskasse,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_212x5217_3012x6894_zoom.jpg,2025-10-18,2025-10-24
+10764661,30.00,,"Billeder, plakater mm.",Billeder,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_2882x4427_4746x6763_zoom.jpg,2025-10-18,2025-10-24
+10764663,79.00,,Boligtekstiler,Sengesæt,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_204x560_4786x2880_zoom.jpg,2025-10-18,2025-10-24
+10764664,99.00,,Boligtekstiler,Sengesæt,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_204x560_4786x2880_zoom.jpg,2025-10-18,2025-10-24
+10764666,79.00,,Køkkenartikler,Opbevaringsboks,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_309x3230_2304x5143_zoom.jpg,2025-10-18,2025-10-24
+10764670,30.00,,Børnebøger,Børnebøger,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_269x5119_1799x6756_zoom.jpg,2025-10-18,2025-10-24
+10764692,20.00,,Løb og fitness,Refleksbrik,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_195x3116_1856x4932_zoom.jpg,2025-10-18,2025-10-24
+10764707,89.00,,Boligtekstiler,Duge,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_2491x2400_4770x4614_zoom.jpg,2025-10-18,2025-10-24
+10738671,50.00,,Syartikler,Syartikler,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_40_1760x2362_3308x4459_zoom.jpg,2025-10-04,2025-10-31
+10738677,25.00,,Service,Krus,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/41/63575/Netto412025-1_42_2495x2415_4812x4441_zoom.jpg,2025-10-04,2025-10-31
+10764665,99.00,,Opbevaring,Opbevaringskasse,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_29_2865x2066_4868x4484_zoom.jpg,2025-10-18,2025-10-24
+10764667,50.00,,Opbevaring,Opbevaringskasse,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_2287x3247_4746x5062_zoom.jpg,2025-10-18,2025-10-24
+10764669,50.00,,Børnebøger,Børnebøger,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_30_1758x5054_3264x6812_zoom.jpg,2025-10-18,2025-10-24
+10764686,25.00,,Cykeltilbehør,Cykellygtesæt,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_41x80_4933x3149_zoom.jpg,2025-10-18,2025-10-24
+10764688,30.00,,Sikkerhed og hygiejne,Refleksvest,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_147x4745_3175x6853_zoom.jpg,2025-10-18,2025-10-24
+10764691,40.00,,Cykeltilbehør,Cykelovertræk,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_1742x3002_4949x5005_zoom.jpg,2025-10-18,2025-10-24
+10764694,40.00,,Cykeltilbehør,Cykellås,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_3126x4964_4835x6837_zoom.jpg,2025-10-18,2025-10-24
+10764696,30.00,,Cykeltilbehør,Cykelkurvovertræk,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_32_147x4745_3175x6853_zoom.jpg,2025-10-18,2025-10-24
+10764709,119.00,,Boligtekstiler,Duge,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_33_2491x2400_4770x4614_zoom.jpg,2025-10-18,2025-10-24
+10764716,25.00,,Stearinlys,Gravlys,1,0,stk.,Netto,https://static.tilbudsugen.dk/1st-retail/2025/43/63675/Netto422025-1_34_301x5119_2247x6756_zoom.jpg,2025-10-18,2025-10-24
