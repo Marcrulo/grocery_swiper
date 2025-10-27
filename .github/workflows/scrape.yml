@@ -32,8 +32,8 @@ jobs:
       env:
         CLOUDINARY_KEY: ${{ secrets.CLOUDINARY_KEY }}
       run: |
-        cd processing
-        python scripts/scrape.py
+        cd scripts
+        python scrape.py
     - name: Push output file to branch
       run: |
         git config --global user.name "github-actions[bot]"
