@@ -28,7 +28,7 @@ all_ids = [int(link.split('/')[-1]) for link in product_links]
 
 # GET PRODUCT INFO
 products = {}
-all_ids = all_ids[:5]
+all_ids = all_ids
 N = len(all_ids)
 for i, data_id in enumerate(all_ids):
     if i % 10 == 0:
