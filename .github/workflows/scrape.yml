@@ -26,7 +26,6 @@ jobs:
 
     - name: Install dependencies 
       run: |
-        ls -l
         python -m pip install --upgrade pip
         if [ -f requirements_scrape.txt ]; then pip install -r requirements_scrape.txt; fi
     - name: Run Python scripts
