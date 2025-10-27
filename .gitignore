@@ -11,3 +11,5 @@ wheels/
 
 imgs/
 .env
+/tmp/
+tmp/
