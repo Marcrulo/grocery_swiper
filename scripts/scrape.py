@@ -7,6 +7,8 @@ import io
 import pandas as pd
 import os
 import cloudinary
+import cloudinary.uploader
+
 
 
 # EXTRACT WEB CONTENT
