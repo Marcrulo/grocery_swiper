@@ -9,8 +9,8 @@ import os
 # Translation model: Danish to English
 translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
 
-# Language model: Qwen-3-4B
-model_name = "Qwen/Qwen3-4B"
+# Language model: Qwen-3-1.7B
+model_name = "Qwen/Qwen3-1.7B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
