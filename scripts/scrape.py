@@ -89,7 +89,6 @@ df_products = pd.DataFrame.from_dict(products, orient='index', columns=['price',
 df_products.reset_index(inplace=True)
 df_products.rename(columns={'index': 'data_id'}, inplace=True)
 date = df_products['start_date'].mode()[0]
-df_products.to_csv(f'../data/csv/products_{date}.csv', index=False)
 
 
 # DOWNLOAD RESIZED IMAGES
@@ -129,6 +128,7 @@ cloudinary.config(
 
 # GO THROUGH ALL NEW IMAGES AND UPLOAD TO CLOUDINARY
 # upload_result = cloudinary.uploader.upload("../data/imgs/2025-10-25/10738668.jpg", public_id=f"10738668", asset_folder=date)
+public_urls = []
 for idx, row in df_products.iterrows():
     data_id = row['data_id']
     extension = row['image_url'].split("?")[0].split(".")[-1].lower()
@@ -137,5 +137,10 @@ for idx, row in df_products.iterrows():
     try:
         upload_result = cloudinary.uploader.upload(local_path, public_id=public_id, folder=date)
         print(f"Uploaded image for data_id {data_id} to Cloudinary.")
+        public_urls.append(upload_result["secure_url"])
     except Exception as e:
         print(f"Failed to upload image for data_id {data_id}: {e}")
+        public_urls.append(None)
+
+df_products['public_urls'] = public_urls
+df_products.to_csv(f'../data/csv/products_{date}.csv', index=False)
