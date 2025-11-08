@@ -142,5 +142,6 @@ for idx, row in df_products.iterrows():
         print(f"Failed to upload image for data_id {data_id}: {e}")
         public_urls.append(None)
 
+print("Public URLs:", public_urls)
 df_products['public_urls'] = public_urls
-df_products.to_csv(f'../data/csv/products_{date}.csv', index=False)
+df_products.to_csv(f'../data/csv/raw/products_{date}.csv', index=False)
