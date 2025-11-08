@@ -3,3 +3,4 @@ cloudinary
 bs4
 pandas
 Pillow
+playwright
