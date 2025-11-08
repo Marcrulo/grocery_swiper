@@ -8,7 +8,9 @@ import pandas as pd
 import os
 import cloudinary
 import cloudinary.uploader
-
+from playwright.async_api import async_playwright
+from playwright.sync_api import sync_playwright
+import asyncio, re, json, threading
 
 
 # EXTRACT WEB CONTENT
@@ -26,6 +28,34 @@ links = soup.find_all('a', href=True)
 product_links = [link['href'] for link in links if link['href'].startswith('https://www.tilbudsugen.dk/single/')]
 all_ids = [int(link.split('/')[-1]) for link in product_links]
 
+# GET DYNAMIC DATA ID
+target_url = "https://www.tilbudsugen.dk/partner/netto-114?page=100"
+pattern = re.compile(
+    r"https://www\.tilbudsugen\.dk/_next/data/([^/]+)/dk/single/[^/?]+\.json\?id=[^&\s]+"
+)
+found = {}
+evt = threading.Event()
+def on_request(request):
+    try:
+        u = request.url
+    except Exception:
+        return
+    m = pattern.search(u)
+    if m and 'build_id' not in found:
+        found['build_id'] = m.group(1)
+        evt.set()
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    context = browser.new_context()
+    page = context.new_page()
+    page.on("request", on_request)
+    page.goto(target_url, wait_until="domcontentloaded", timeout=60000)
+    # wait up to 10 seconds for matching request
+    evt.wait(timeout=10)
+    browser.close()
+DYNAMIC_ID = found.get('build_id')
+print("Captured build id:", DYNAMIC_ID)
+
 # GET PRODUCT INFO
 products = {}
 all_ids = all_ids
@@ -33,7 +63,7 @@ N = len(all_ids)
 for i, data_id in enumerate(all_ids):
     if i % 10 == 0:
         print(f"Processing #{i} of {N}")
-    data_url = f"https://www.tilbudsugen.dk/_next/data/0LbXUdvz48Lb0tgkd4pVT/dk/single/{data_id}.json?id={data_id}"
+    data_url = f"https://www.tilbudsugen.dk/_next/data/{DYNAMIC_ID}/dk/single/{data_id}.json?id={data_id}"
     response = requests.get(data_url)
     time.sleep(1)
     if response.status_code != 200:
