@@ -1,23 +1,9 @@
-
 ### IMPORTS
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 import pandas as pd
 import os
-
-### LOAD MODELS
-
-# Translation model: Danish to English
-translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
-
-# Language model: Qwen-3-1.7B
-model_name = "Qwen/Qwen3-1.7B"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(
-    model_name,
-    torch_dtype="auto",
-    device_map="cpu"
-)
-
+import gc
+import torch
 
 ### CHECK WHICH FILES TO PROCESS
 processed_files = os.listdir('../data/csv/processed')
@@ -25,19 +11,38 @@ to_be_processed = []
 for file in os.listdir('../data/csv/raw'):
     if file not in processed_files:
         to_be_processed.append(file)
-to_be_processed
-
+print(f"Files to process: {to_be_processed}")
 
 ### APPLY PROCESSING
 for file in to_be_processed:
-    df_products = pd.read_csv(os.path.join('../data/csv/raw',file))
-
-    # Add translated product names
+    print(f"\n=== Processing {file} ===")
+    df_products = pd.read_csv(os.path.join('../data/csv/raw', file))
+    
+    # STEP 1: Load translation model, use it, then delete it
+    print("Loading translation model...")
+    translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
+    
     translation = translator(df_products['product_name'].values.tolist(), max_length=40)
     translation_list = [t['translation_text'] for t in translation]
     df_products['translated_product'] = translation_list
-    print(translation_list)
-
+    print(f"Translated {len(translation_list)} products")
+    
+    # Clean up translation model
+    del translator
+    gc.collect()
+    print("Translation model removed from memory")
+    
+    # STEP 2: Load Qwen model, use it, then delete it
+    print("Loading Qwen model...")
+    model_name = "Qwen/Qwen3-1.7B"
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        torch_dtype="auto",
+        device_map="cpu",
+        low_cpu_mem_usage=True  # This helps reduce memory usage
+    )
+    
     all_contents = []
     for index, row in df_products.iterrows():
         # prepare the model input
@@ -51,7 +56,7 @@ for file in to_be_processed:
             messages,
             tokenize=False,
             add_generation_prompt=True,
-            enable_thinking=False  # Disable thinking mode here
+            enable_thinking=False
         )
         model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
@@ -68,7 +73,20 @@ for file in to_be_processed:
         print(content)
         print('----')
         all_contents.append(content)
+        
+        # Clean up after each generation to prevent memory buildup
+        del model_inputs, generated_ids, output_ids
+        gc.collect()
+    
     df_products['tinder_bio'] = all_contents
 
-    df_products = df_products.drop(columns=['image_url'])
-    df_products.to_csv(os.path.join('../data/csv/processed',file), index=False)
+    # Save the processed file
+    df_products.to_csv(os.path.join('../data/csv/processed', file), index=False)
+    print(f"Saved processed file: {file}")
+    
+    # Clean up Qwen model before next file
+    del model, tokenizer
+    gc.collect()
+    print("Qwen model removed from memory")
+
+print("\n=== All files processed ===")
