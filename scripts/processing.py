@@ -31,7 +31,7 @@ to_be_processed
 ### APPLY PROCESSING
 for file in to_be_processed:
     df_products = pd.read_csv(os.path.join('../data/csv/raw',file))
-    
+
     # Add translated product names
     translation = translator(df_products['product_name'].values.tolist(), max_length=40)
     translation_list = [t['translation_text'] for t in translation]
@@ -70,4 +70,5 @@ for file in to_be_processed:
         all_contents.append(content)
     df_products['tinder_bio'] = all_contents
 
+    df_products = df_products.drop(columns=['image_url'])
     df_products.to_csv(os.path.join('../data/csv/processed',file), index=False)
