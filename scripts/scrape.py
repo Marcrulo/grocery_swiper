@@ -58,7 +58,6 @@ print("Captured build id:", DYNAMIC_ID)
 
 # GET PRODUCT INFO
 products = {}
-all_ids = all_ids
 N = len(all_ids)
 for i, data_id in enumerate(all_ids):
     if i % 10 == 0:
@@ -67,7 +66,9 @@ for i, data_id in enumerate(all_ids):
     response = requests.get(data_url)
     time.sleep(1)
     if response.status_code != 200:
-        assert False, f"Request failed with status code {response.status_code}"
+        # assert False, f"Request failed with status code {response.status_code}. Url: {data_url}"
+        products[data_id] = [None]*11
+        continue
     page_props = response.json()['pageProps']
     
     price        = page_props['offer']['price']
