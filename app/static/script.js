@@ -1,40 +1,6 @@
-// Sample data for cards
-const cardsData = [
-    {
-        id: 1,
-        title: "Product 1",
-        description: "This is an amazing product you'll love!",
-        image: "https://via.placeholder.com/400x500/667eea/ffffff?text=Product+1"
-    },
-    {
-        id: 2,
-        title: "Product 2",
-        description: "High quality and great value for money.",
-        image: "https://via.placeholder.com/400x500/764ba2/ffffff?text=Product+2"
-    },
-    {
-        id: 3,
-        title: "Product 3",
-        description: "Perfect for your daily needs.",
-        image: "https://via.placeholder.com/400x500/f093fb/ffffff?text=Product+3"
-    },
-    {
-        id: 4,
-        title: "Product 4",
-        description: "Limited time offer - don't miss out!",
-        image: "https://via.placeholder.com/400x500/4facfe/ffffff?text=Product+4"
-    },
-    {
-        id: 5,
-        title: "Product 5",
-        description: "Customer favorite with 5-star ratings.",
-        image: "https://via.placeholder.com/400x500/00f2fe/ffffff?text=Product+5"
-    }
-];
-
 class SwipeApp {
     constructor() {
-        this.cards = [...cardsData];
+        this.cards = [];
         this.currentIndex = 0;
         this.cardsContainer = document.getElementById('cardsContainer');
         this.noCardsMessage = document.getElementById('noCards');
@@ -49,23 +15,48 @@ class SwipeApp {
         this.currentCard = null;
         this.likeIndicator = null;
         this.passIndicator = null;
+        this.isAnimating = false;
         
         this.init();
     }
     
-    init() {
+    async init() {
+        await this.loadProducts();
         this.renderCards();
         this.attachEventListeners();
     }
     
+    async loadProducts() {
+        try {
+            const response = await fetch('/api/products');
+            if (!response.ok) {
+                throw new Error('Failed to load products');
+            }
+            this.cards = await response.json();
+            console.log(`Loaded ${this.cards.length} products`);
+        } catch (error) {
+            console.error('Error loading products:', error);
+            this.showNoCards();
+        }
+    }
+    
     renderCards() {
-        this.cardsContainer.innerHTML = '';
+        // Remove only old cards that are no longer needed
+        const existingCards = this.cardsContainer.querySelectorAll('.card');
+        existingCards.forEach(card => {
+            const cardIndex = parseInt(card.dataset.index);
+            if (cardIndex < this.currentIndex - 1 || cardIndex > this.currentIndex + 2) {
+                card.remove();
+            }
+        });
         
-        // Render cards in reverse order so the first card is on top
+        // Add new cards if needed - render in reverse order for proper z-index
         for (let i = Math.min(this.currentIndex + 2, this.cards.length - 1); i >= this.currentIndex; i--) {
-            if (i < this.cards.length) {
+            const existingCard = this.cardsContainer.querySelector(`[data-index="${i}"]`);
+            if (!existingCard && i < this.cards.length) {
                 const card = this.createCard(this.cards[i], i);
-                this.cardsContainer.appendChild(card);
+                // Insert at the beginning to maintain z-index order
+                this.cardsContainer.insertBefore(card, this.cardsContainer.firstChild);
             }
         }
         
@@ -87,15 +78,17 @@ class SwipeApp {
         if (index > this.currentIndex) {
             const scale = 1 - (index - this.currentIndex) * 0.05;
             card.style.transform = `scale(${scale})`;
+            card.style.transition = 'transform 0.3s ease';
         }
         
         card.innerHTML = `
             <div class="swipe-indicator pass">NOPE</div>
             <div class="swipe-indicator like">LIKE</div>
-            <img src="${data.image}" alt="${data.title}" class="card-image" loading="eager">
+            <img src="${data.image}" alt="${data.title}" class="card-image" loading="eager" decoding="async">
             <div class="card-content">
                 <h2 class="card-title">${data.title}</h2>
                 <p class="card-description">${data.description}</p>
+                ${data.price ? `<p class="card-price">${data.price} kr</p>` : ''}
             </div>
         `;
         
@@ -113,15 +106,19 @@ class SwipeApp {
     }
     
     attachEventListeners() {
-        // Touch events
-        this.cardsContainer.addEventListener('mousedown', this.onDragStart.bind(this), { passive: true });
-        this.cardsContainer.addEventListener('touchstart', this.onDragStart.bind(this), { passive: true });
+        // Touch events - bind methods once to avoid multiple bindings
+        this.boundDragStart = this.onDragStart.bind(this);
+        this.boundDragMove = this.onDragMove.bind(this);
+        this.boundDragEnd = this.onDragEnd.bind(this);
         
-        document.addEventListener('mousemove', this.onDragMove.bind(this), { passive: false });
-        document.addEventListener('touchmove', this.onDragMove.bind(this), { passive: false });
+        this.cardsContainer.addEventListener('mousedown', this.boundDragStart);
+        this.cardsContainer.addEventListener('touchstart', this.boundDragStart, { passive: true });
         
-        document.addEventListener('mouseup', this.onDragEnd.bind(this));
-        document.addEventListener('touchend', this.onDragEnd.bind(this));
+        document.addEventListener('mousemove', this.boundDragMove);
+        document.addEventListener('touchmove', this.boundDragMove, { passive: false });
+        
+        document.addEventListener('mouseup', this.boundDragEnd);
+        document.addEventListener('touchend', this.boundDragEnd);
         
         // Button events
         this.passBtn.addEventListener('click', () => this.swipe('left'));
@@ -132,9 +129,17 @@ class SwipeApp {
         const target = e.target.closest('.card');
         if (!target || parseInt(target.dataset.index) !== this.currentIndex) return;
         
+        // Allow starting a new drag even if previous animation isn't complete
+        
+        // Prevent default drag behavior for mouse events
+        if (e.type === 'mousedown') {
+            e.preventDefault();
+        }
+        
         this.isDragging = true;
         this.currentCard = target;
         this.currentCard.classList.add('swiping');
+        this.currentCard.style.cursor = 'grabbing';
         
         // Cache indicator elements
         this.likeIndicator = this.currentCard.querySelector('.swipe-indicator.like');
@@ -190,17 +195,48 @@ class SwipeApp {
         
         this.isDragging = false;
         const deltaX = this.currentX - this.startX;
+        const cardToAnimate = this.currentCard;
         
-        // Swipe threshold
-        const swipeThreshold = 100;
-        
-        if (Math.abs(deltaX) > swipeThreshold) {
+        // Always swipe the card in the direction it was dragged if moved more than 10px
+        if (Math.abs(deltaX) > 10) {
             const direction = deltaX > 0 ? 'right' : 'left';
-            this.completeSwipe(direction);
+            
+            // Shorter, faster animation
+            const targetX = direction === 'right' ? window.innerWidth * 1.5 : -window.innerWidth * 1.5;
+            const targetRotation = direction === 'right' ? 30 : -30;
+            
+            // Remove swiping class to enable transitions
+            cardToAnimate.classList.remove('swiping');
+            
+            // Scale up the next card smoothly and immediately
+            const nextCard = this.cardsContainer.querySelector(`[data-index="${this.currentIndex + 1}"]`);
+            if (nextCard) {
+                nextCard.style.transform = 'scale(1)';
+                nextCard.style.transition = 'transform 0.35s ease';
+            }
+            
+            // Apply faster transition and animate current card out
+            cardToAnimate.style.transition = `transform 0.35s ease-out`;
+            cardToAnimate.style.transform = `translateX(${targetX}px) rotate(${targetRotation}deg)`;
+            
+            // Log the action
+            const cardData = this.cards[this.currentIndex];
+            console.log(`${direction === 'right' ? 'Liked' : 'Passed'}:`, cardData);
+            
+            // Increment immediately and render new cards faster
+            this.currentIndex++;
+            
+            // Remove the old card and add new one after shorter delay
+            setTimeout(() => {
+                cardToAnimate.remove();
+                this.renderCards();
+            }, 200);
         } else {
-            // Reset card position
-            this.currentCard.classList.remove('swiping');
-            this.currentCard.style.transform = '';
+            // Reset card position if barely moved
+            cardToAnimate.classList.remove('swiping');
+            cardToAnimate.style.transition = 'transform 0.3s ease';
+            cardToAnimate.style.transform = '';
+            cardToAnimate.style.cursor = 'grab';
             this.resetIndicators();
         }
         
@@ -220,18 +256,35 @@ class SwipeApp {
     completeSwipe(direction) {
         if (!this.currentCard) return;
         
-        this.currentCard.classList.remove('swiping');
-        this.currentCard.classList.add(direction === 'right' ? 'swiped-right' : 'swiped-left');
+        const cardToAnimate = this.currentCard;
+        const targetX = direction === 'right' ? window.innerWidth * 1.5 : -window.innerWidth * 1.5;
+        const targetRotation = direction === 'right' ? 30 : -30;
         
-        // Log the action (you can replace this with actual API calls)
+        // Scale up the next card smoothly
+        const nextCard = this.cardsContainer.querySelector(`[data-index="${this.currentIndex + 1}"]`);
+        if (nextCard) {
+            nextCard.style.transform = 'scale(1)';
+            nextCard.style.transition = 'transform 0.35s ease';
+        }
+        
+        // Animate card out
+        cardToAnimate.classList.remove('swiping');
+        cardToAnimate.style.transition = 'transform 0.35s ease-out';
+        cardToAnimate.style.transform = `translateX(${targetX}px) rotate(${targetRotation}deg)`;
+        
+        // Log the action
         const cardData = this.cards[this.currentIndex];
         console.log(`${direction === 'right' ? 'Liked' : 'Passed'}:`, cardData);
         
-        // Move to next card
+        // Increment immediately and clean up
+        this.currentIndex++;
+        
         setTimeout(() => {
-            this.currentIndex++;
+            cardToAnimate.remove();
             this.renderCards();
-        }, 300);
+        }, 200);
+        
+        this.currentCard = null;
     }
     
     resetIndicators() {
