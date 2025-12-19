@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#FE3C72">
+    <link rel="manifest" href="/manifest.json">
     <title>Swiper App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -13,10 +15,9 @@
     <div class="app-container">
         <!-- Header -->
         <header class="header">
-            <div class="logo">🔥 Swiper</div>
-            <div class="header-icons">
-                <button class="icon-btn">⚙️</button>
-            </div>
+            <button class="icon-btn" id="settingsBtn">⚙️</button>
+            <div class="logo">🛒🍎</div>
+            <button class="icon-btn" id="fullscreenBtn">⛶</button>
         </header>
 
         <!-- Main Content -->
@@ -38,9 +39,25 @@
             <button class="action-btn pass-btn" id="passBtn">
                 <span class="btn-icon">✕</span>
             </button>
+            <button class="action-btn super-like-btn" id="superLikeBtn">
+                <span class="btn-icon">⭐</span>
+            </button>
             <button class="action-btn like-btn" id="likeBtn">
                 <span class="btn-icon">♥</span>
             </button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Swipe History</h2>
+                <button class="close-btn" id="closeModal">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <p class="loading">Loading...</p>
+            </div>
         </div>
     </div>
 

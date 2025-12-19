@@ -1,3 +1,142 @@
+// Generate a stable device fingerprint
+function generateDeviceId() {
+    // Check if we already have a device ID stored
+    let deviceId = localStorage.getItem('deviceId');
+    if (deviceId) {
+        return deviceId;
+    }
+    
+    // Generate fingerprint from stable browser properties
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.fillText('Device Fingerprint', 2, 2);
+    const canvasFingerprint = canvas.toDataURL();
+    
+    const fingerprint = [
+        navigator.userAgent,
+        navigator.language,
+        screen.width + 'x' + screen.height,
+        screen.colorDepth,
+        new Date().getTimezoneOffset(),
+        !!window.sessionStorage,
+        !!window.localStorage,
+        canvasFingerprint
+    ].join('|||');
+    
+    // Create hash from fingerprint
+    deviceId = simpleHash(fingerprint);
+    
+    // Store in localStorage for consistency
+    localStorage.setItem('deviceId', deviceId);
+    return deviceId;
+}
+
+// Simple hash function
+function simpleHash(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32-bit integer
+    }
+    return Math.abs(hash).toString(36);
+}
+
+// Generate a stable device fingerprint
+function generateDeviceId() {
+    // Check if we already have a device ID stored
+    let deviceId = localStorage.getItem('deviceId');
+    if (deviceId) {
+        return deviceId;
+    }
+    
+    // Generate fingerprint from stable browser properties
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.fillText('Device Fingerprint', 2, 2);
+    const canvasFingerprint = canvas.toDataURL();
+    
+    const fingerprint = [
+        navigator.userAgent,
+        navigator.language,
+        screen.width + 'x' + screen.height,
+        screen.colorDepth,
+        new Date().getTimezoneOffset(),
+        !!window.sessionStorage,
+        !!window.localStorage,
+        canvasFingerprint
+    ].join('|||');
+    
+    // Create hash from fingerprint
+    deviceId = simpleHash(fingerprint);
+    
+    // Store in localStorage for consistency
+    localStorage.setItem('deviceId', deviceId);
+    return deviceId;
+}
+
+// Simple hash function
+function simpleHash(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32-bit integer
+    }
+    return Math.abs(hash).toString(36);
+}
+
+// Pull-to-refresh functionality
+let pullStartY = 0;
+let pullMoveY = 0;
+let isPulling = false;
+
+function initPullToRefresh() {
+    const appContainer = document.querySelector('.app-container');
+    
+    appContainer.addEventListener('touchstart', (e) => {
+        if (window.scrollY === 0) {
+            pullStartY = e.touches[0].clientY;
+            isPulling = true;
+        }
+    }, { passive: true });
+    
+    appContainer.addEventListener('touchmove', (e) => {
+        if (!isPulling) return;
+        
+        pullMoveY = e.touches[0].clientY - pullStartY;
+        
+        // Only trigger if pulling down (positive value) and at top of page
+        if (pullMoveY > 0 && window.scrollY === 0) {
+            // Add visual feedback
+            if (pullMoveY > 80) {
+                appContainer.style.transform = `translateY(${Math.min(pullMoveY / 3, 40)}px)`;
+            }
+        }
+    }, { passive: true });
+    
+    appContainer.addEventListener('touchend', () => {
+        if (isPulling && pullMoveY > 80) {
+            // Reload the page
+            location.reload();
+        }
+        
+        // Reset
+        appContainer.style.transform = '';
+        appContainer.style.transition = 'transform 0.3s ease';
+        setTimeout(() => {
+            appContainer.style.transition = '';
+        }, 300);
+        isPulling = false;
+        pullStartY = 0;
+        pullMoveY = 0;
+    }, { passive: true });
+}
+
 class SwipeApp {
     constructor() {
         this.cards = [];
@@ -5,6 +144,7 @@ class SwipeApp {
         this.cardsContainer = document.getElementById('cardsContainer');
         this.noCardsMessage = document.getElementById('noCards');
         this.passBtn = document.getElementById('passBtn');
+        this.superLikeBtn = document.getElementById('superLikeBtn');
         this.likeBtn = document.getElementById('likeBtn');
         
         this.isDragging = false;
@@ -86,6 +226,11 @@ class SwipeApp {
             <div class="swipe-indicator like">LIKE</div>
             <img src="${data.image}" alt="${data.title}" class="card-image" loading="eager" decoding="async">
             <div class="card-content">
+                ${data.brand || data.category ? `<div class="card-meta">
+                    ${data.brand ? `<span class="card-brand">${data.brand}</span>` : ''}
+                    ${data.brand && data.category ? `<span class="card-separator">•</span>` : ''}
+                    ${data.category ? `<span class="card-category">${data.category}</span>` : ''}
+                </div>` : ''}
                 <h2 class="card-title">${data.title}</h2>
                 <p class="card-description">${data.description}</p>
                 ${data.price ? `<p class="card-price">${data.price} kr</p>` : ''}
@@ -122,6 +267,7 @@ class SwipeApp {
         
         // Button events
         this.passBtn.addEventListener('click', () => this.swipe('left'));
+        this.superLikeBtn.addEventListener('click', () => this.swipe('up'));
         this.likeBtn.addEventListener('click', () => this.swipe('right'));
     }
     
@@ -219,9 +365,13 @@ class SwipeApp {
             cardToAnimate.style.transition = `transform 0.35s ease-out`;
             cardToAnimate.style.transform = `translateX(${targetX}px) rotate(${targetRotation}deg)`;
             
-            // Log the action
+            // Log the action and save to database
             const cardData = this.cards[this.currentIndex];
             console.log(`${direction === 'right' ? 'Liked' : 'Passed'}:`, cardData);
+            
+            // Save to database
+            const action = direction === 'right' ? 'like' : 'pass';
+            this.saveSwipe(cardData.id, cardData.date_title, action);
             
             // Increment immediately and render new cards faster
             this.currentIndex++;
@@ -257,8 +407,18 @@ class SwipeApp {
         if (!this.currentCard) return;
         
         const cardToAnimate = this.currentCard;
-        const targetX = direction === 'right' ? window.innerWidth * 1.5 : -window.innerWidth * 1.5;
-        const targetRotation = direction === 'right' ? 30 : -30;
+        let targetX, targetY, targetRotation;
+        
+        if (direction === 'up') {
+            // Super like - fly upward
+            targetX = 0;
+            targetY = -window.innerHeight * 1.5;
+            targetRotation = 0;
+        } else {
+            targetX = direction === 'right' ? window.innerWidth * 1.5 : -window.innerWidth * 1.5;
+            targetY = 0;
+            targetRotation = direction === 'right' ? 30 : -30;
+        }
         
         // Scale up the next card smoothly
         const nextCard = this.cardsContainer.querySelector(`[data-index="${this.currentIndex + 1}"]`);
@@ -270,11 +430,16 @@ class SwipeApp {
         // Animate card out
         cardToAnimate.classList.remove('swiping');
         cardToAnimate.style.transition = 'transform 0.35s ease-out';
-        cardToAnimate.style.transform = `translateX(${targetX}px) rotate(${targetRotation}deg)`;
+        cardToAnimate.style.transform = `translate(${targetX}px, ${targetY}px) rotate(${targetRotation}deg)`;
         
-        // Log the action
+        // Log the action and save to database
         const cardData = this.cards[this.currentIndex];
-        console.log(`${direction === 'right' ? 'Liked' : 'Passed'}:`, cardData);
+        const actionName = direction === 'right' ? 'Liked' : direction === 'up' ? 'Super Liked' : 'Passed';
+        console.log(`${actionName}:`, cardData);
+        
+        // Save to database
+        const action = direction === 'right' ? 'like' : direction === 'up' ? 'superlike' : 'pass';
+        this.saveSwipe(cardData.id, cardData.date_title, action);
         
         // Increment immediately and clean up
         this.currentIndex++;
@@ -297,9 +462,138 @@ class SwipeApp {
         this.cardsContainer.style.display = 'none';
         this.noCardsMessage.style.display = 'block';
     }
+    
+    saveSwipe(dataId, dateTitle, action) {
+        // Get product name and price from current card data
+        const cardData = this.cards.find(c => c.id === dataId);
+        const productName = cardData ? cardData.title : '';
+        const price = cardData ? cardData.price : 0;
+        const deviceId = generateDeviceId();
+        
+        // Save swipe to database via API
+        fetch('/api/swipe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                data_id: dataId,
+                date_title: dateTitle,
+                product_name: productName,
+                price: price,
+                device_id: deviceId,
+                action: action
+            })
+        }).catch(error => {
+            console.error('Error saving swipe:', error);
+        });
+    }
+}
+
+// Fullscreen toggle
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log('Error attempting to enable fullscreen:', err);
+        });
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
 }
 
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new SwipeApp();
+    const app = new SwipeApp();
+    
+    // Initialize pull-to-refresh
+    initPullToRefresh();
+    
+    // Fullscreen button
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+    }
+    
+    // Settings modal functionality
+    const settingsBtn = document.getElementById('settingsBtn');
+    const settingsModal = document.getElementById('settingsModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalBody = document.getElementById('modalBody');
+    
+    settingsBtn.addEventListener('click', async () => {
+        settingsModal.classList.add('active');
+        await loadHistory();
+    });
+    
+    closeModal.addEventListener('click', () => {
+        settingsModal.classList.remove('active');
+    });
+    
+    settingsModal.addEventListener('click', (e) => {
+        if (e.target === settingsModal) {
+            settingsModal.classList.remove('active');
+        }
+    });
+    
+    async function loadHistory() {
+        modalBody.innerHTML = '<p class="loading">Loading...</p>';
+        
+        try {
+            const deviceId = generateDeviceId();
+            const response = await fetch(`/api/history?device_id=${deviceId}`);
+            const history = await response.json();
+            
+            if (history.length === 0) {
+                modalBody.innerHTML = '<p class="loading">No swipe history yet</p>';
+                return;
+            }
+            
+            modalBody.innerHTML = history.map(item => {
+                const status = item.is_superliked ? 'superliked' : item.is_liked ? 'liked' : 'passed';
+                const statusText = item.is_superliked ? 'Super Liked' : item.is_liked ? 'Liked' : 'Passed';
+                const productInfo = item.product_name ? `${item.product_name} - ${item.price} kr` : `Product ID: ${item.data_id}`;
+                
+                return `
+                    <div class="history-item">
+                        <div class="history-info">
+                            <div class="history-name">${productInfo}</div>
+                            <div class="history-date">${item.date_title} • ${new Date(item.created_at).toLocaleString()}</div>
+                        </div>
+                        <div class="history-actions">
+                            <select class="status-badge status-${status}" onchange="updateEntry(${item.id}, this.value); this.blur();">
+                                <option value="like" ${item.is_liked ? 'selected' : ''}>Liked</option>
+                                <option value="superlike" ${item.is_superliked ? 'selected' : ''}>Super Liked</option>
+                                <option value="pass" ${item.is_passed ? 'selected' : ''}>Passed</option>
+                            </select>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        } catch (error) {
+            console.error('Error loading history:', error);
+            modalBody.innerHTML = '<p class="loading">Error loading history</p>';
+        }
+    }
+    
+    window.updateEntry = async (id, action) => {
+        if (!action) return;
+        
+        try {
+            const response = await fetch(`/api/history/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ action })
+            });
+            
+            if (response.ok) {
+                await loadHistory();
+            }
+        } catch (error) {
+            console.error('Error updating entry:', error);
+        }
+    };
 });
