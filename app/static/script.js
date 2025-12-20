@@ -265,10 +265,29 @@ class SwipeApp {
         document.addEventListener('mouseup', this.boundDragEnd);
         document.addEventListener('touchend', this.boundDragEnd);
         
-        // Button events
-        this.passBtn.addEventListener('click', () => this.swipe('left'));
-        this.superLikeBtn.addEventListener('click', () => this.swipe('up'));
-        this.likeBtn.addEventListener('click', () => this.swipe('right'));
+        // Button events with explicit press/release class handling to avoid stuck active states on mobile
+        const addPress = (el) => el.classList.add('active-press');
+        const clearPress = (el) => el.classList.remove('active-press');
+        const clearPressWithDelay = (el, delay = 120) => {
+            clearPress(el);
+            setTimeout(() => clearPress(el), delay); // fallback to ensure release
+        };
+        const bindPressHandlers = (el, handler) => {
+            el.addEventListener('touchstart', () => addPress(el), { passive: true });
+            el.addEventListener('touchend', () => clearPressWithDelay(el), { passive: true });
+            el.addEventListener('touchcancel', () => clearPress(el), { passive: true });
+            el.addEventListener('touchmove', () => clearPress(el), { passive: true });
+            el.addEventListener('mousedown', () => addPress(el));
+            ['mouseup', 'mouseleave'].forEach(evt => el.addEventListener(evt, () => clearPress(el)));
+            el.addEventListener('click', (e) => {
+                clearPress(el);
+                handler(e);
+            });
+        };
+
+        bindPressHandlers(this.passBtn, () => this.swipe('left'));
+        bindPressHandlers(this.superLikeBtn, () => this.swipe('up'));
+        bindPressHandlers(this.likeBtn, () => this.swipe('right'));
     }
     
     onDragStart(e) {

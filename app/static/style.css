@@ -27,13 +27,10 @@ body {
 .app-container {
     max-width: 500px;
     margin: 0 auto;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     background: white;
 }
-
-/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -272,40 +269,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.15s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.action-btn:hover {
-    transform: scale(1.1);
+.action-btn:focus,
+.action-btn:focus-visible {
+    background: white;
+    transform: none;
+    outline: none;
 }
 
 .action-btn:active {
-    transform: scale(0.95);
+    background: rgba(0, 0, 0, 0.06);
+    transform: scale(0.98);
+}
+
+/* Programmatic active class to guarantee release on touchend */
+.action-btn.active-press {
+    background: rgba(0, 0, 0, 0.06);
+    transform: scale(0.98);
 }
 
 .pass-btn {
     border-color: var(--pass-color);
 }
 
-.pass-btn:hover {
-    background: var(--pass-color);
-}
-
-.pass-btn:hover .btn-icon {
-    color: white;
-}
-
 .super-like-btn {
     border-color: #4A90E2;
-}
-
-.super-like-btn:hover {
-    background: #4A90E2;
-}
-
-.super-like-btn:hover .btn-icon {
-    color: white;
 }
 
 .super-like-btn .btn-icon {
@@ -315,14 +308,6 @@ body {
 
 .like-btn {
     border-color: var(--like-color);
-}
-
-.like-btn:hover {
-    background: var(--like-color);
-}
-
-.like-btn:hover .btn-icon {
-    color: white;
 }
 
 .btn-icon {
