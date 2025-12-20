@@ -266,19 +266,39 @@ class SwipeApp {
         document.addEventListener('touchend', this.boundDragEnd);
         
         // Button events with explicit press/release class handling to avoid stuck active states on mobile
-        const addPress = (el) => el.classList.add('active-press');
-        const clearPress = (el) => el.classList.remove('active-press');
-        const clearPressWithDelay = (el, delay = 120) => {
+        const addPress = (el) => {
+            // Cancel any pending clears and restart the animation by forcing reflow
+            if (el._pressTimer) {
+                clearTimeout(el._pressTimer);
+            }
+            el.classList.remove('active-press');
+            void el.offsetWidth; // force reflow so the next add retriggers transition
+            el.classList.add('active-press');
+            el._pressTimer = setTimeout(() => el.classList.remove('active-press'), 140);
+        };
+        const clearPress = (el) => {
+            if (el._pressTimer) {
+                clearTimeout(el._pressTimer);
+                el._pressTimer = null;
+            }
+            el.classList.remove('active-press');
+        };
+        const clearPressWithDelay = (el, delay = 80) => {
             clearPress(el);
-            setTimeout(() => clearPress(el), delay); // fallback to ensure release
+            setTimeout(() => clearPress(el), delay);
         };
         const bindPressHandlers = (el, handler) => {
-            el.addEventListener('touchstart', () => addPress(el), { passive: true });
-            el.addEventListener('touchend', () => clearPressWithDelay(el), { passive: true });
-            el.addEventListener('touchcancel', () => clearPress(el), { passive: true });
-            el.addEventListener('touchmove', () => clearPress(el), { passive: true });
-            el.addEventListener('mousedown', () => addPress(el));
-            ['mouseup', 'mouseleave'].forEach(evt => el.addEventListener(evt, () => clearPress(el)));
+            const onDown = (e) => {
+                if (e.pointerType === 'mouse' && e.buttons !== 1) return;
+                addPress(el);
+            };
+            const onUp = () => clearPressWithDelay(el);
+            const onCancel = () => clearPress(el);
+
+            el.addEventListener('pointerdown', onDown);
+            el.addEventListener('pointerup', onUp);
+            el.addEventListener('pointerleave', onCancel);
+            el.addEventListener('pointercancel', onCancel);
             el.addEventListener('click', (e) => {
                 clearPress(el);
                 handler(e);
