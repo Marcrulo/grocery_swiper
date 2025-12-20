@@ -22,10 +22,17 @@ for file in to_be_processed:
     print("Loading translation model...")
     translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
     
+    # Translate product names
     translation = translator(df_products['product_name'].values.tolist(), max_length=40)
     translation_list = [t['translation_text'] for t in translation]
     df_products['translated_product'] = translation_list
     print(f"Translated {len(translation_list)} products")
+    
+    # Translate categories
+    category_translation = translator(df_products['category'].values.tolist(), max_length=40)
+    category_translation_list = [t['translation_text'] for t in category_translation]
+    df_products['translated_category'] = category_translation_list
+    print(f"Translated {len(category_translation_list)} categories")
     
     # Clean up translation model
     del translator
