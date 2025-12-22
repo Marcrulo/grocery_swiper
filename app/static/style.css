@@ -13,6 +13,9 @@
     --text-light: #757575;
     --background: #FAFAFA;
     --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --header-height: 68px;
+    --actions-height: 110px;
+    --content-padding: 20px;
 }
 
 body {
@@ -84,7 +87,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: var(--content-padding);
+    padding-bottom: calc(var(--actions-height) + 20px);
     overflow: hidden;
 }
 
@@ -92,7 +96,14 @@ body {
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: 500px;
+    height: calc(100dvh - var(--header-height) - var(--actions-height) - (var(--content-padding) * 2));
+    max-height: 520px;
+}
+
+@supports not (height: 100dvh) {
+    .cards-container {
+        height: calc(100vh - var(--header-height) - var(--actions-height) - (var(--content-padding) * 2));
+    }
 }
 
 .card {
@@ -264,6 +275,7 @@ body {
     max-width: 500px;
     margin: 0 auto;
     width: 100%;
+    z-index: 2000;
 }
 
 .action-btn {

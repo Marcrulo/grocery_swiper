@@ -90,52 +90,8 @@ function simpleHash(str) {
     return Math.abs(hash).toString(36);
 }
 
-// Pull-to-refresh functionality
-let pullStartY = 0;
-let pullMoveY = 0;
-let isPulling = false;
-
-function initPullToRefresh() {
-    const appContainer = document.querySelector('.app-container');
-    
-    appContainer.addEventListener('touchstart', (e) => {
-        if (window.scrollY === 0) {
-            pullStartY = e.touches[0].clientY;
-            isPulling = true;
-        }
-    }, { passive: true });
-    
-    appContainer.addEventListener('touchmove', (e) => {
-        if (!isPulling) return;
-        
-        pullMoveY = e.touches[0].clientY - pullStartY;
-        
-        // Only trigger if pulling down (positive value) and at top of page
-        if (pullMoveY > 0 && window.scrollY === 0) {
-            // Add visual feedback
-            if (pullMoveY > 80) {
-                appContainer.style.transform = `translateY(${Math.min(pullMoveY / 3, 40)}px)`;
-            }
-        }
-    }, { passive: true });
-    
-    appContainer.addEventListener('touchend', () => {
-        if (isPulling && pullMoveY > 80) {
-            // Reload the page
-            location.reload();
-        }
-        
-        // Reset
-        appContainer.style.transform = '';
-        appContainer.style.transition = 'transform 0.3s ease';
-        setTimeout(() => {
-            appContainer.style.transition = '';
-        }, 300);
-        isPulling = false;
-        pullStartY = 0;
-        pullMoveY = 0;
-    }, { passive: true });
-}
+// Pull-to-refresh disabled
+function initPullToRefresh() {}
 
 class SwipeApp {
     constructor() {
