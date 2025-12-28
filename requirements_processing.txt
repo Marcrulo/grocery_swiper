@@ -3,3 +3,5 @@ pandas
 sentencepiece
 torch
 accelerate
+scikit-learn
+python-dotenv
