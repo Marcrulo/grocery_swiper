@@ -33,28 +33,51 @@ target_url = "https://www.tilbudsugen.dk/partner/netto-114?page=100"
 pattern = re.compile(
     r"https://www\.tilbudsugen\.dk/_next/data/([^/]+)/dk/single/[^/?]+\.json\?id=[^&\s]+"
 )
-found = {}
-evt = threading.Event()
-def on_request(request):
+
+DYNAMIC_ID = None
+max_retries = 10
+retry_delay = 30  # seconds
+
+for attempt in range(max_retries):
+    found = {}
+    evt = threading.Event()
+    def on_request(request):
+        try:
+            u = request.url
+        except Exception:
+            return
+        m = pattern.search(u)
+        if m and 'build_id' not in found:
+            found['build_id'] = m.group(1)
+            evt.set()
+    
     try:
-        u = request.url
-    except Exception:
-        return
-    m = pattern.search(u)
-    if m and 'build_id' not in found:
-        found['build_id'] = m.group(1)
-        evt.set()
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
-    context = browser.new_context()
-    page = context.new_page()
-    page.on("request", on_request)
-    page.goto(target_url, wait_until="domcontentloaded", timeout=60000)
-    # wait up to 10 seconds for matching request
-    evt.wait(timeout=10)
-    browser.close()
-DYNAMIC_ID = found.get('build_id')
-print("Captured build id:", DYNAMIC_ID)
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context()
+            page = context.new_page()
+            page.on("request", on_request)
+            page.goto(target_url, wait_until="domcontentloaded", timeout=60000)
+            # wait up to 10 seconds for matching request
+            evt.wait(timeout=10)
+            browser.close()
+        
+        DYNAMIC_ID = found.get('build_id')
+        if DYNAMIC_ID is not None:
+            print(f"Captured build id: {DYNAMIC_ID}")
+            break
+        else:
+            print(f"Attempt {attempt + 1}/{max_retries}: Failed to capture build id. Retrying in {retry_delay} seconds...")
+            if attempt < max_retries - 1:
+                time.sleep(retry_delay)
+    except Exception as e:
+        print(f"Attempt {attempt + 1}/{max_retries}: Error - {e}. Retrying in {retry_delay} seconds...")
+        if attempt < max_retries - 1:
+            time.sleep(retry_delay)
+
+if DYNAMIC_ID is None:
+    print(f"Failed to capture build id after {max_retries} attempts. Exiting.")
+    exit(1)
 
 # GET PRODUCT INFO
 products = {}
