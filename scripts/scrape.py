@@ -35,7 +35,7 @@ pattern = re.compile(
 )
 
 DYNAMIC_ID = None
-max_retries = 10
+max_retries = 3
 retry_delay = 30  # seconds
 
 for attempt in range(max_retries):
