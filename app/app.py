@@ -62,7 +62,27 @@ def manifest():
 @app.route('/api/products')
 def get_products():
     """API endpoint to get all products."""
+    device_id = request.args.get('device_id')
     products = load_all_products()
+    
+    # If device_id is provided, filter out already swiped products
+    if device_id:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # Get all product IDs that have been swiped by this device
+        cursor.execute('''
+            SELECT DISTINCT data_id
+            FROM swipes
+            WHERE device_id = ?
+        ''', (device_id,))
+        
+        swiped_ids = {row['data_id'] for row in cursor.fetchall()}
+        conn.close()
+        
+        # Filter out swiped products
+        products = [p for p in products if p['id'] not in swiped_ids]
+    
     return jsonify(products)
 
 @app.route('/api/swipe', methods=['POST'])

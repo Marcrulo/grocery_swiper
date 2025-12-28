@@ -124,7 +124,8 @@ class SwipeApp {
     
     async loadProducts() {
         try {
-            const response = await fetch('/api/products');
+            const deviceId = generateDeviceId();
+            const response = await fetch(`/api/products?device_id=${deviceId}`);
             if (!response.ok) {
                 throw new Error('Failed to load products');
             }
