@@ -8,6 +8,7 @@ from email.mime.multipart import MIMEMultipart
 import os
 import pandas as pd
 import datetime
+from datetime import datetime, timedelta
 
 import pandas as pd
 import numpy as np
@@ -41,8 +42,7 @@ latest_csv = csvs[-1]
 test_df    = pd.read_csv(f"{CSV_PATH}products_{latest_csv}.csv")
 
 # %%
-# conn = sqlite3.connect("../data/sql/swipes.db")
-conn = sqlite3.connect("../data/sql/download")
+conn = sqlite3.connect("../data/sql/swipes.db")
 labels = pd.read_sql_query("SELECT data_id, is_liked, is_superliked, is_passed FROM swipes WHERE device_id = 'wvh6mq'", conn)
 conn.close()
 
@@ -180,8 +180,10 @@ def send_html_email(to_email, subject, html_body):
 CSV_PATH = "../data/csv/mail_groceries.csv"
 
 
-def build_grocery_grid_html(csv_path=CSV_PATH):
-    """Return an HTML string with a 2-column grid for email."""
+def build_grocery_grid_html(csv_path=CSV_PATH, period_text=None):
+    """Return an HTML string with a 2-column grid for email.
+    If period_text is provided, it is shown at the top of the email.
+    """
     df = pd.read_csv(csv_path)
     df = df.fillna("")
 
@@ -230,10 +232,18 @@ def build_grocery_grid_html(csv_path=CSV_PATH):
         rows.append(f"<tr>{cells}</tr>")
 
     table_rows = "\n".join(rows)
+
+    # Optional sales period block at the top
+    period_block = (
+        f"<p style='color:#222;margin:0 0 12px 0;font-weight:600;'>" + period_text + "</p>"
+        if period_text else ""
+    )
+
     html = f"""
             <html>
               <body style='margin:0;padding:16px;background:#f7f7f7;font-family:Arial,sans-serif;'>
                 <div style='max-width:960px;margin:0 auto;'>
+                  {period_block}
                   <p style='color:#444;margin-top:0;margin-bottom:16px;'>Curated picks from this week's sales flyer based on your preferences.</p>
                   <table role='presentation' cellpadding='0' cellspacing='0' border='0' style='border-collapse:collapse;width:100%;table-layout:fixed;'>
                     {table_rows}
@@ -247,9 +257,18 @@ def build_grocery_grid_html(csv_path=CSV_PATH):
 
 
 # %%
-# Build HTML for topitems (2-column grid)
+# Build HTML for topitems (2-column grid) with sales period at top
+
+# Compute period from latest_csv (YYYY-MM-DD) to +6 days
 try:
-    html_content = build_grocery_grid_html()
+    start_date = datetime.strptime(latest_csv, "%Y-%m-%d").date()
+    end_date = start_date + timedelta(days=6)
+    period_text = f"Sales in period {start_date.strftime('%d/%m')} - {end_date.strftime('%d/%m')}"
+except Exception:
+    period_text = None
+
+try:
+    html_content = build_grocery_grid_html(period_text=period_text)
     preview = html_content[:500] + ("..." if len(html_content) > 500 else "")
     print("HTML preview (first 500 chars):")
     print(preview)
@@ -257,7 +276,7 @@ except FileNotFoundError:
     html_content = ""
     print("CSV not found at ../data/csv/mail_groceries.csv")
 
-subject_line = f"Weekly Grocery Highlights — {datetime.date.today().strftime('%Y-%m-%d')}"
+subject_line = f"Weekly Grocery Highlights — {datetime.today().strftime('%Y-%m-%d')}"
 
 # send_html_email(
 #     to_email="thorupmettek@gmail.com ",
@@ -269,5 +288,6 @@ send_html_email(
     subject=subject_line,
     html_body=html_content
 )
+
 
 
