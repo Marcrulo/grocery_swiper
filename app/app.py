@@ -1,8 +1,10 @@
-from flask import Flask, render_template, jsonify, request, send_from_directory
+from flask import Flask, render_template, jsonify, request, send_from_directory, send_file
 import pandas as pd
 import sqlite3
 from pathlib import Path
 import random
+import re
+import os
 
 app = Flask(__name__)
 
@@ -15,6 +17,35 @@ def get_db_connection():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+def list_tables(conn):
+    cursor = conn.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name;")
+    return [row[0] for row in cursor.fetchall()]
+
+def run_select_query(conn, sql, params=None, limit=None):
+    """Run a safe SELECT-only query and return rows as dicts."""
+    if not isinstance(sql, str):
+        raise ValueError("SQL must be a string")
+    sql_clean = sql.strip()
+    # Enforce single statement and SELECT-only
+    if ";" in sql_clean:
+        raise ValueError("Multiple statements not allowed")
+    if not re.match(r"^(?i)\s*select\s", sql_clean):
+        raise ValueError("Only SELECT queries are allowed")
+    if limit is not None:
+        try:
+            limit_val = int(limit)
+            if limit_val <= 0:
+                limit_val = 100
+        except Exception:
+            limit_val = 100
+        sql_clean = f"{sql_clean} LIMIT {limit_val}"
+    cur = conn.cursor()
+    cur.execute(sql_clean, params or ())
+    cols = [c[0] for c in cur.description] if cur.description else []
+    rows = cur.fetchall()
+    return [dict(zip(cols, row)) for row in rows]
 
 def load_all_products():
     """Load all products from all CSV files in the processed directory."""
@@ -58,6 +89,67 @@ def index():
 @app.route('/manifest.json')
 def manifest():
     return send_from_directory('static', 'manifest.json', mimetype='application/manifest+json')
+
+@app.route('/api/db')
+def db_info():
+    """Basic information about the SQLite database file."""
+    exists = DB_PATH.exists()
+    info = {
+        'path': str(DB_PATH),
+        'exists': exists,
+    }
+    if exists:
+        stat = DB_PATH.stat()
+        info.update({
+            'size_bytes': stat.st_size,
+            'modified_ts': stat.st_mtime,
+        })
+        # List tables
+        conn = get_db_connection()
+        try:
+            info['tables'] = list_tables(conn)
+        finally:
+            conn.close()
+    return jsonify(info)
+
+@app.route('/api/db/download')
+def db_download():
+    """Download the raw SQLite database file."""
+    if not DB_PATH.exists():
+        return jsonify({'error': 'Database file not found'}), 404
+    # Use attachment_filename for broader Flask compatibility (<2.0)
+    return send_file(str(DB_PATH), as_attachment=True, attachment_filename='swipes.db', mimetype='application/octet-stream')
+
+@app.route('/api/db/tables')
+def db_tables():
+    """List all non-internal tables in the database."""
+    if not DB_PATH.exists():
+        return jsonify({'error': 'Database file not found'}), 404
+    conn = get_db_connection()
+    try:
+        return jsonify({'tables': list_tables(conn)})
+    finally:
+        conn.close()
+
+@app.route('/api/db/select', methods=['POST'])
+def db_select():
+    """Run a read-only SELECT query and return results."""
+    payload = request.get_json(silent=True) or {}
+    sql = payload.get('sql')
+    limit = payload.get('limit', 200)
+    if not sql:
+        return jsonify({'error': 'Provide SQL in request body'}), 400
+    if not DB_PATH.exists():
+        return jsonify({'error': 'Database file not found'}), 404
+    conn = get_db_connection()
+    try:
+        try:
+            rows = run_select_query(conn, sql, params=None, limit=limit)
+        except ValueError as ve:
+            return jsonify({'error': str(ve)}), 400
+        return jsonify({'rows': rows, 'count': len(rows)})
+    finally:
+        conn.close()
 
 @app.route('/api/products')
 def get_products():
