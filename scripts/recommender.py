@@ -278,11 +278,11 @@ except FileNotFoundError:
 
 subject_line = f"Weekly Grocery Highlights — {datetime.today().strftime('%Y-%m-%d')}"
 
-# send_html_email(
-#     to_email="thorupmettek@gmail.com ",
-#     subject=subject_line,
-#     html_body=html_content
-# )
+send_html_email(
+    to_email="thorupmettek@gmail.com ",
+    subject=subject_line,
+    html_body=html_content
+)
 send_html_email(
     to_email="marcus.presutti.eu@gmail.com",
     subject=subject_line,
