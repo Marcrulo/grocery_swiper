@@ -40,6 +40,18 @@ jobs:
         python -m pip install --upgrade pip --no-cache-dir
         pip install -r requirements_processing.txt --no-cache-dir
     
+    - name: Download database backup
+      env:
+        APP_URL: ${{ secrets.APP_URL }}
+      run: |
+        if [ -n "$APP_URL" ]; then
+          echo "Downloading database from ${APP_URL}/api/db/download"
+          mkdir -p data/sql
+          curl -f -o data/sql/swipes.db "${APP_URL}/api/db/download" || echo "Failed to download database, continuing without backup"
+        else
+          echo "APP_URL not set, skipping database download"
+        fi
+    
     - name: Run Python scripts
       env:
         CLOUDINARY_KEY: ${{ secrets.CLOUDINARY_KEY }}
@@ -67,5 +79,7 @@ jobs:
         git commit -m "Process data $(date +'%Y-%m-%d')" || echo "No changes to commit"
         git add data/csv/mail_groceries.csv
         git commit -m "Latest recommended groceries"
+        git add data/sql/swipes.db
+        git commit -m "Backup database $(date +'%Y-%m-%d')" || echo "No database changes to commit"
         git push -u origin master --force
         

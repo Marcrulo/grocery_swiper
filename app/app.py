@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # Path to processed CSV files
 DATA_DIR = Path(__file__).parent.parent / 'data' / 'csv' / 'processed'
-DB_PATH = Path(__file__).parent.parent / 'data' / 'sql' / 'swipes.db'
+DB_PATH  = Path(__file__).parent.parent / 'data' / 'sql' / 'swipes.db'
 
 def get_db_connection():
     """Get a database connection."""
