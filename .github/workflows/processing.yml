@@ -78,8 +78,7 @@ jobs:
         git add data/csv/processed/
         git commit -m "Process data $(date +'%Y-%m-%d')" || echo "No changes to commit"
         git add data/csv/mail_groceries.csv
-        git commit -m "Latest recommended groceries"
+        git commit -m "Latest recommended groceries" || echo "No grocery changes to commit"
         git add data/sql/swipes.db
         git commit -m "Backup database $(date +'%Y-%m-%d')" || echo "No database changes to commit"
-        git push -u origin master --force
-        
+        git push -u origin master --force || echo "Nothing to push"
