@@ -42,7 +42,7 @@ latest_csv = csvs[-1]
 test_df    = pd.read_csv(f"{CSV_PATH}products_{latest_csv}.csv")
 
 # %%
-conn = sqlite3.connect("../data/sql/download")
+conn = sqlite3.connect("../data/sql/swipes.db")
 labels = pd.read_sql_query("SELECT data_id, is_liked, is_superliked, is_passed FROM swipes WHERE device_id = 'wvh6mq'", conn)
 conn.close()
 
