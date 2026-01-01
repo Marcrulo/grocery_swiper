@@ -118,7 +118,7 @@ def db_download():
     if not DB_PATH.exists():
         return jsonify({'error': 'Database file not found'}), 404
     # Use attachment_filename for broader Flask compatibility (<2.0)
-    return send_file(str(DB_PATH), as_attachment=True, attachment_filename='swipes.db', mimetype='application/octet-stream')
+    return send_file(str(DB_PATH), as_attachment=True, download_name='swipes.db', mimetype='application/octet-stream')
 
 @app.route('/api/db/tables')
 def db_tables():
