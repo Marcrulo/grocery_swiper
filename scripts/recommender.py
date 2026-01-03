@@ -100,7 +100,7 @@ Xtest = test_df_features.drop(columns=['data_id']).to_numpy()
 # %%
 
 # Duplicate samples based on weights
-weights = np.where(train_df_features['is_superliked'] == 1, 3, 1)
+weights = np.where(train_df_features['is_superliked'] == 1, 10, 1)
 
 # Repeat each row according to its weight
 indices = np.repeat(np.arange(len(train_df_features)), weights)
