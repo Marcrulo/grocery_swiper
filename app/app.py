@@ -126,10 +126,14 @@ class ActiveLearner:
             print(f"✗ Failed to load uncertain products: {e}. Falling back to all products.")
             self.uncertain_products_cache = load_all_products()
     
-    def _compute_uncertain_products(self, top_k=20):
+    def _compute_uncertain_products(self, top_k=20, exclude_ids=None):
         """Compute products sorted by uncertainty from trained model.
         
         Uncertainty = distance from 0.5 prediction probability
+        
+        Args:
+            top_k: Number of products to return
+            exclude_ids: Set of product IDs to exclude (already swiped)
         """
         if not MODEL_PATH.exists():
             raise FileNotFoundError(f"Model not found at {MODEL_PATH}")
@@ -137,12 +141,20 @@ class ActiveLearner:
         if not self.latest_csv:
             raise ValueError("No CSV files found")
         
+        if exclude_ids is None:
+            exclude_ids = set()
+        
         try:
             # Load trained model and preprocessors
             with open(MODEL_PATH, 'rb') as f:
                 model, vectorizer, preprocessor, test_df_cached = pickle.load(f)
             
             test_df = test_df_cached
+            
+            # Filter out already swiped products
+            if exclude_ids:
+                test_df = test_df[~test_df['data_id'].isin(exclude_ids)].reset_index(drop=True)
+                print(f"[_compute_uncertain_products] After excluding swiped: {len(test_df)} products remain")
             
             # Preprocess test data
             test_sentences = test_df['product_name'].tolist()
@@ -153,9 +165,15 @@ class ActiveLearner:
             # Get predictions
             probas = model.predict_proba(test_preprocessed)[:, 1]
             
-            # Uncertainty = distance from 0.5 (maximum uncertainty is 0.5, minimum is 0)
+            # Uncertainty = distance from 0.5 (highest uncertainty = closest to 0.5)
             uncertainty = np.abs(probas - 0.5)
-            uncertain_indices = np.argsort(-uncertainty)[:top_k]  # Top k most uncertain
+            
+            # Sort by ASCENDING uncertainty - items with smallest distance from 0.5 first
+            uncertain_indices = np.argsort(uncertainty)[:top_k]  # Ascending: closest to 0.5 first
+            
+            print(f"[_compute_uncertain_products] Probability range: {probas.min():.3f} to {probas.max():.3f}")
+            print(f"[_compute_uncertain_products] Top 20 uncertainties: {uncertainty[uncertain_indices]}")
+            print(f"[_compute_uncertain_products] Top 20 probabilities: {probas[uncertain_indices]}")
             
             # Build product list
             products = []
@@ -171,7 +189,8 @@ class ActiveLearner:
                     'category': row['category'] if pd.notna(row['category']) else '',
                     'store': row['store_name'] if pd.notna(row['store_name']) else '',
                     'date_title': self.latest_csv,
-                    'uncertainty': float(uncertainty[idx])
+                    'uncertainty': float(uncertainty[idx]),
+                    'probability': float(probas[idx])
                 })
             
             return products
@@ -289,19 +308,12 @@ def get_products():
     """API endpoint to get products (uncertain samples from active learning cache)."""
     device_id = request.args.get('device_id')
     
-    # Use cached uncertain products, fallback to all if cache is empty
-    with active_learner.lock:
-        products = active_learner.uncertain_products_cache.copy()
-    
-    if not products:
-        products = load_all_products()
-    
-    # If device_id is provided, filter out already swiped products
+    # Get all swiped product IDs first (to filter out later)
+    swiped_ids = set()
     if device_id:
         conn = get_db_connection()
         cursor = conn.cursor()
         
-        # Get all product IDs that have been swiped by this device
         cursor.execute('''
             SELECT DISTINCT data_id
             FROM swipes
@@ -310,8 +322,38 @@ def get_products():
         
         swiped_ids = {row['data_id'] for row in cursor.fetchall()}
         conn.close()
-        
-        # Filter out swiped products
+    
+    # Use cached uncertain products first
+    with active_learner.lock:
+        products = active_learner.uncertain_products_cache.copy()
+    
+    print(f"[get_products] Cache has {len(products)} products")
+    print(f"[get_products] Device {device_id} has swiped {len(swiped_ids)} products")
+    
+    # Filter out swiped products
+    products = [p for p in products if p['id'] not in swiped_ids]
+    
+    print(f"[get_products] After filtering: {len(products)} products remain")
+    
+    # If cache is exhausted, reload it immediately
+    if not products:
+        print("[get_products] Cache exhausted, reloading uncertain products...")
+        try:
+            with active_learner.lock:
+                active_learner.uncertain_products_cache = active_learner._compute_uncertain_products(exclude_ids=swiped_ids)
+                products = active_learner.uncertain_products_cache.copy()
+            print(f"[get_products] Reloaded {len(products)} uncertain products")
+            # No need to filter again since we already excluded swiped_ids
+        except Exception as e:
+            print(f"[get_products] Failed to reload cache: {e}")
+    
+    if products:
+        print(f"[get_products] First product has probability: {'probability' in products[0]}")
+    
+    # If still no uncertain products available, fallback to all products
+    if not products:
+        print("[get_products] Falling back to all products")
+        products = load_all_products()
         products = [p for p in products if p['id'] not in swiped_ids]
     
     return jsonify(products)
@@ -358,21 +400,15 @@ def save_swipe():
 
 @app.route('/api/history')
 def get_history():
-    """API endpoint to get swipe history for a specific device."""
-    device_id = request.args.get('device_id')
-    
-    if not device_id:
-        return jsonify({'error': 'Device ID required'}), 400
-    
+    """API endpoint to get all swipe history."""
     conn = get_db_connection()
     cursor = conn.cursor()
     
     cursor.execute('''
         SELECT id, data_id, date_title, product_name, price, is_liked, is_superliked, is_passed, created_at
         FROM swipes
-        WHERE device_id = ?
         ORDER BY created_at DESC
-    ''', (device_id,))
+    ''')
     
     history = []
     for row in cursor.fetchall():

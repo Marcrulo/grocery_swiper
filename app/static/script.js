@@ -191,6 +191,7 @@ class SwipeApp {
                 <h2 class="card-title">${data.title}</h2>
                 <p class="card-description">${data.description}</p>
                 ${data.price ? `<p class="card-price">${data.price} kr</p>` : ''}
+                ${data.probability !== undefined ? `<p class="card-probability">Match: ${(data.probability * 100).toFixed(0)}%</p>` : ''}
             </div>
         `;
         
@@ -537,8 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalBody.innerHTML = '<p class="loading">Loading...</p>';
         
         try {
-            const deviceId = generateDeviceId();
-            const response = await fetch(`/api/history?device_id=${deviceId}`);
+            const response = await fetch(`/api/history`);
             const history = await response.json();
             
             if (history.length === 0) {

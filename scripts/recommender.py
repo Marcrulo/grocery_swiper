@@ -124,7 +124,7 @@ model_dir.mkdir(parents=True, exist_ok=True)
 model_path = model_dir / "active_learner.pkl"
 
 with open(model_path, 'wb') as f:
-    pickle.dump((knn, vectorizer, preprocessor, test_df), f)
+    pickle.dump((xgb, vectorizer, preprocessor, test_df), f)
 print(f"✓ Model saved to {model_path}")
 
 # %%
