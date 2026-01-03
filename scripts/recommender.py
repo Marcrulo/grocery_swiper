@@ -18,6 +18,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.neighbors import KNeighborsClassifier
+from xgboost import XGBClassifier
 
 import sqlite3
 
@@ -43,8 +44,8 @@ latest_csv = csvs[-1]
 test_df    = pd.read_csv(f"{CSV_PATH}products_{latest_csv}.csv")
 
 # %%
-conn = sqlite3.connect("../data/sql/download")
-labels = pd.read_sql_query("SELECT data_id, is_liked, is_superliked, is_passed FROM swipes WHERE device_id = 'wvh6mq'", conn)
+conn = sqlite3.connect("../data/sql/swipes.db")
+labels = pd.read_sql_query("SELECT data_id, is_liked, is_superliked, is_passed FROM swipes", conn)
 conn.close()
 
 # %% [markdown]
@@ -97,7 +98,6 @@ Xtest = test_df_features.drop(columns=['data_id']).to_numpy()
 # ## Inference
 
 # %%
-knn = KNeighborsClassifier(n_neighbors=5, metric='cosine')
 
 # Duplicate samples based on weights
 weights = np.where(train_df_features['is_superliked'] == 1, 3, 1)
@@ -109,7 +109,12 @@ Xtrain_weighted = Xtrain[indices]
 ytrain_weighted = ytrain[indices]
 train_df_features_weighted = train_df_features.iloc[indices].reset_index(drop=True)
 
-knn.fit(Xtrain_weighted, ytrain_weighted)
+
+#%%
+xgb = XGBClassifier(use_label_encoder=False, eval_metric='logloss')
+xgb.fit(Xtrain_weighted, ytrain_weighted)
+probas = xgb.predict_proba(Xtest)
+
 
 # %%
 # Save trained model, vectorizer, preprocessor, and test dataframe for active learning
@@ -124,7 +129,6 @@ print(f"✓ Model saved to {model_path}")
 
 # %%
 # Probabilities for all test samples, and print in descending order of probability of being liked
-probas = knn.predict_proba(Xtest)
 sorted_indices = np.argsort(-probas[:, 1])  # Sort by probability of being liked (class 1)
 for idx in sorted_indices:
     data_id = test_df_features.iloc[idx]['data_id']

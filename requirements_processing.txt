@@ -5,3 +5,4 @@ torch
 accelerate
 scikit-learn
 python-dotenv
+xgboost
