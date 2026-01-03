@@ -9,6 +9,7 @@ import os
 import pandas as pd
 import datetime
 from datetime import datetime, timedelta
+from pathlib import Path
 
 import pandas as pd
 import numpy as np
@@ -109,6 +110,17 @@ ytrain_weighted = ytrain[indices]
 train_df_features_weighted = train_df_features.iloc[indices].reset_index(drop=True)
 
 knn.fit(Xtrain_weighted, ytrain_weighted)
+
+# %%
+# Save trained model, vectorizer, preprocessor, and test dataframe for active learning
+import pickle
+model_dir = Path("../data/models")
+model_dir.mkdir(parents=True, exist_ok=True)
+model_path = model_dir / "active_learner.pkl"
+
+with open(model_path, 'wb') as f:
+    pickle.dump((knn, vectorizer, preprocessor, test_df), f)
+print(f"✓ Model saved to {model_path}")
 
 # %%
 # Probabilities for all test samples, and print in descending order of probability of being liked

@@ -5,12 +5,19 @@ from pathlib import Path
 import random
 import re
 import os
+import threading
+import pickle
+import time
+import numpy as np
+from subprocess import Popen, DEVNULL
 
 app = Flask(__name__)
 
 # Path to processed CSV files
 DATA_DIR = Path(__file__).parent.parent / 'data' / 'csv' / 'processed'
 DB_PATH = Path(__file__).parent.parent / 'data' / 'sql' / 'swipes.db'
+MODEL_PATH = Path(__file__).parent.parent / 'data' / 'models' / 'active_learner.pkl'
+SCRIPTS_DIR = Path(__file__).parent.parent / 'scripts'
 
 def get_db_connection():
     """Get a database connection."""
@@ -81,6 +88,132 @@ def load_all_products():
     random.shuffle(all_products)
     
     return all_products
+
+class ActiveLearner:
+    """Manages uncertainty sampling for active learning.
+    
+    Strategy:
+    - Loads 20 most uncertain products from trained model
+    - After 10 swipes, retrains model in background
+    - Remaining 10 products continue to be shown while retraining
+    - Cycle repeats with new uncertain samples
+    """
+    
+    def __init__(self):
+        self.uncertain_products_cache = []
+        self.swipe_counter = 0
+        self.lock = threading.Lock()
+        self.retraining = False
+        self.latest_csv = None
+        self._find_latest_csv()
+        self.load_initial_products()
+    
+    def _find_latest_csv(self):
+        """Find the most recent CSV file."""
+        csv_files = list(DATA_DIR.glob('products_*.csv'))
+        if csv_files:
+            # Sort by filename and get latest
+            csv_files.sort()
+            self.latest_csv = csv_files[-1].stem.replace('products_', '')
+            print(f"Latest CSV: {self.latest_csv}")
+    
+    def load_initial_products(self):
+        """Load initial 20 most uncertain products."""
+        try:
+            self.uncertain_products_cache = self._compute_uncertain_products()
+            print(f"✓ Loaded {len(self.uncertain_products_cache)} uncertain products")
+        except Exception as e:
+            print(f"✗ Failed to load uncertain products: {e}. Falling back to all products.")
+            self.uncertain_products_cache = load_all_products()
+    
+    def _compute_uncertain_products(self, top_k=20):
+        """Compute products sorted by uncertainty from trained model.
+        
+        Uncertainty = distance from 0.5 prediction probability
+        """
+        if not MODEL_PATH.exists():
+            raise FileNotFoundError(f"Model not found at {MODEL_PATH}")
+        
+        if not self.latest_csv:
+            raise ValueError("No CSV files found")
+        
+        try:
+            # Load trained model and preprocessors
+            with open(MODEL_PATH, 'rb') as f:
+                model, vectorizer, preprocessor, test_df_cached = pickle.load(f)
+            
+            test_df = test_df_cached
+            
+            # Preprocess test data
+            test_sentences = test_df['product_name'].tolist()
+            test_product_encoding = vectorizer.transform(test_sentences).toarray()
+            test_onehot = preprocessor.transform(test_df).toarray()
+            test_preprocessed = np.hstack((test_product_encoding, test_onehot))
+            
+            # Get predictions
+            probas = model.predict_proba(test_preprocessed)[:, 1]
+            
+            # Uncertainty = distance from 0.5 (maximum uncertainty is 0.5, minimum is 0)
+            uncertainty = np.abs(probas - 0.5)
+            uncertain_indices = np.argsort(-uncertainty)[:top_k]  # Top k most uncertain
+            
+            # Build product list
+            products = []
+            for idx in uncertain_indices:
+                row = test_df.iloc[idx]
+                products.append({
+                    'id': int(row['data_id']),
+                    'title': row['product_name'],
+                    'description': row['tinder_bio'] if pd.notna(row['tinder_bio']) else row['product_name'],
+                    'image': row['public_urls'] if pd.notna(row['public_urls']) else '',
+                    'price': float(row['price']) if pd.notna(row['price']) else 0.0,
+                    'brand': row['brand'] if pd.notna(row['brand']) else '',
+                    'category': row['category'] if pd.notna(row['category']) else '',
+                    'store': row['store_name'] if pd.notna(row['store_name']) else '',
+                    'date_title': self.latest_csv,
+                    'uncertainty': float(uncertainty[idx])
+                })
+            
+            return products
+        except Exception as e:
+            print(f"Error computing uncertain products: {e}")
+            raise
+    
+    def record_swipe(self):
+        """Increment swipe counter and trigger retrain if needed."""
+        with self.lock:
+            self.swipe_counter += 1
+            if self.swipe_counter >= 10 and not self.retraining:
+                self.retraining = True
+                print(f"[ActiveLearner] Triggered retraining after {self.swipe_counter} swipes")
+                threading.Thread(target=self._retrain_in_background, daemon=True).start()
+    
+    def _retrain_in_background(self):
+        """Retrain model in background process."""
+        try:
+            print("[ActiveLearner] Starting background retraining...")
+            # Run recommender.py in background process (non-blocking for Flask)
+            proc = Popen(
+                ['python', str(SCRIPTS_DIR / 'recommender.py')],
+                stdout=DEVNULL,
+                stderr=DEVNULL
+            )
+            # Wait for completion
+            proc.wait()
+            print("[ActiveLearner] Retraining process completed")
+            
+            # Reload cache with new model
+            self.uncertain_products_cache = self._compute_uncertain_products()
+            print(f"[ActiveLearner] ✓ Loaded {len(self.uncertain_products_cache)} new uncertain products")
+        except Exception as e:
+            print(f"[ActiveLearner] ✗ Retraining failed: {e}")
+        finally:
+            with self.lock:
+                self.swipe_counter = 0
+                self.retraining = False
+
+# Initialize the active learner
+active_learner = ActiveLearner()
 
 @app.route('/')
 def index():
@@ -153,9 +286,15 @@ def db_select():
 
 @app.route('/api/products')
 def get_products():
-    """API endpoint to get all products."""
+    """API endpoint to get products (uncertain samples from active learning cache)."""
     device_id = request.args.get('device_id')
-    products = load_all_products()
+    
+    # Use cached uncertain products, fallback to all if cache is empty
+    with active_learner.lock:
+        products = active_learner.uncertain_products_cache.copy()
+    
+    if not products:
+        products = load_all_products()
     
     # If device_id is provided, filter out already swiped products
     if device_id:
@@ -211,6 +350,9 @@ def save_swipe():
     
     conn.commit()
     conn.close()
+    
+    # Track swipe for active learning
+    active_learner.record_swipe()
     
     return jsonify({'success': True})
 
