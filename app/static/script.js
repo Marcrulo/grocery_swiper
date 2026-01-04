@@ -137,7 +137,30 @@ class SwipeApp {
         }
     }
     
-    renderCards() {
+    async loadMoreProducts() {
+        try {
+            const deviceId = generateDeviceId();
+            const response = await fetch(`/api/products?device_id=${deviceId}`);
+            if (!response.ok) {
+                throw new Error('Failed to load more products');
+            }
+            const newCards = await response.json();
+            if (newCards.length > 0) {
+                console.log(`Loaded ${newCards.length} more products`);
+                // Append new cards to existing array
+                this.cards = this.cards.concat(newCards);
+                // Hide "no cards" message if it was showing
+                this.cardsContainer.style.display = 'block';
+                this.noCardsMessage.style.display = 'none';
+            } else {
+                console.log('No more products available');
+            }
+        } catch (error) {
+            console.error('Error loading more products:', error);
+        }
+    }
+    
+    async renderCards() {
         // Remove only old cards that are no longer needed
         const existingCards = this.cardsContainer.querySelectorAll('.card');
         existingCards.forEach(card => {
@@ -146,6 +169,12 @@ class SwipeApp {
                 card.remove();
             }
         });
+        
+        // If we're running low on cards (less than 3 remaining), load more
+        if (this.currentIndex >= this.cards.length) {
+            console.log('No more cards, fetching more products...');
+            await this.loadMoreProducts();
+        }
         
         // Add new cards if needed - render in reverse order for proper z-index
         for (let i = Math.min(this.currentIndex + 2, this.cards.length - 1); i >= this.currentIndex; i--) {
@@ -157,6 +186,7 @@ class SwipeApp {
             }
         }
         
+        // Only show "no cards" if we still have no cards after trying to load more
         if (this.currentIndex >= this.cards.length) {
             this.showNoCards();
         }
