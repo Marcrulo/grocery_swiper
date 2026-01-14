@@ -2,8 +2,7 @@ name: Weekly scraping
 
 on:
   schedule:
-    # run weekly saturday at 11PM
-    - cron: '0 9 * * 5'
+    - cron: '0 1 * * 6'
   workflow_dispatch: # allows manual run
 
 jobs:
