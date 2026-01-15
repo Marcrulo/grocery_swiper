@@ -22,6 +22,8 @@ from xgboost import XGBClassifier
 
 import sqlite3
 
+import pickle
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -118,7 +120,6 @@ probas = xgb.predict_proba(Xtest)
 
 # %%
 # Save trained model, vectorizer, preprocessor, and test dataframe for active learning
-import pickle
 model_dir = Path("../data/models")
 model_dir.mkdir(parents=True, exist_ok=True)
 model_path = model_dir / "active_learner.pkl"
