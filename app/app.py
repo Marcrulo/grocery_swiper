@@ -54,8 +54,15 @@ def run_select_query(conn, sql, params=None, limit=None):
     rows = cur.fetchall()
     return [dict(zip(cols, row)) for row in rows]
 
-def load_all_products():
-    """Load all products from all CSV files in the processed directory."""
+def load_all_products(exclude_ids=None):
+    """Load all products from all CSV files in the processed directory.
+    
+    Args:
+        exclude_ids: Set of product IDs to exclude (already swiped)
+    """
+    if exclude_ids is None:
+        exclude_ids = set()
+    
     all_products = []
     
     # Get all CSV files
@@ -69,8 +76,13 @@ def load_all_products():
             
             # Convert each row to a product dictionary
             for _, row in df.iterrows():
+                product_id = int(row['data_id'])
+                # Skip if already swiped
+                if product_id in exclude_ids:
+                    continue
+                    
                 product = {
-                    'id': int(row['data_id']),
+                    'id': product_id,
                     'title': row['product_name'],
                     'description': row['tinder_bio'] if pd.notna(row['tinder_bio']) else row['product_name'],
                     'image': row['public_urls'] if pd.notna(row['public_urls']) else '',
@@ -117,14 +129,30 @@ class ActiveLearner:
             self.latest_csv = csv_files[-1].stem.replace('products_', '')
             print(f"Latest CSV: {self.latest_csv}")
     
+    def _get_all_swiped_ids(self):
+        """Get all swiped product IDs from the database."""
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute('SELECT DISTINCT data_id FROM swipes')
+            swiped_ids = {row['data_id'] for row in cursor.fetchall()}
+            conn.close()
+            return swiped_ids
+        except Exception as e:
+            print(f"Error getting swiped IDs: {e}")
+            return set()
+    
     def load_initial_products(self):
         """Load initial 20 most uncertain products."""
         try:
-            self.uncertain_products_cache = self._compute_uncertain_products()
-            print(f"✓ Loaded {len(self.uncertain_products_cache)} uncertain products")
+            # Get all swiped product IDs to exclude
+            exclude_ids = self._get_all_swiped_ids()
+            self.uncertain_products_cache = self._compute_uncertain_products(exclude_ids=exclude_ids)
+            print(f"✓ Loaded {len(self.uncertain_products_cache)} uncertain products (excluded {len(exclude_ids)} swiped)")
         except Exception as e:
             print(f"✗ Failed to load uncertain products: {e}. Falling back to all products.")
-            self.uncertain_products_cache = load_all_products()
+            exclude_ids = self._get_all_swiped_ids()
+            self.uncertain_products_cache = load_all_products(exclude_ids=exclude_ids)
     
     def _compute_uncertain_products(self, top_k=20, exclude_ids=None):
         """Compute products sorted by uncertainty from trained model.
@@ -221,9 +249,10 @@ class ActiveLearner:
             proc.wait()
             print("[ActiveLearner] Retraining process completed")
             
-            # Reload cache with new model
-            self.uncertain_products_cache = self._compute_uncertain_products()
-            print(f"[ActiveLearner] ✓ Loaded {len(self.uncertain_products_cache)} new uncertain products")
+            # Reload cache with new model, excluding already swiped products
+            exclude_ids = self._get_all_swiped_ids()
+            self.uncertain_products_cache = self._compute_uncertain_products(exclude_ids=exclude_ids)
+            print(f"[ActiveLearner] ✓ Loaded {len(self.uncertain_products_cache)} new uncertain products (excluded {len(exclude_ids)} swiped)")
         except Exception as e:
             print(f"[ActiveLearner] ✗ Retraining failed: {e}")
         finally:
@@ -353,8 +382,7 @@ def get_products():
     # If still no uncertain products available, fallback to all products
     if not products:
         print("[get_products] Falling back to all products")
-        products = load_all_products()
-        products = [p for p in products if p['id'] not in swiped_ids]
+        products = load_all_products(exclude_ids=swiped_ids)
     
     return jsonify(products)
 
