@@ -129,7 +129,7 @@ def download_and_resize_image(image_url, data_id, date):
             img = Image.open(io.BytesIO(resp.content))
         except Exception as e:
             print(f"Cannot identify image file for data_id {data_id}. URL: {image_url}")
-            img = Image.open('../data/imgs/placeholder.png')
+            img = Image.open('../data/imgs/placeholder.jpg').convert("RGB")
         w, h = img.size
         max_side = max(w, h)
         if max_side > 300:
