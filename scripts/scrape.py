@@ -127,7 +127,7 @@ def download_and_resize_image(image_url, data_id, date):
     else:
         try:
             img = Image.open(io.BytesIO(resp.content))
-        except UnidentifiedImageError:
+        except Exception as e:
             print(f"Cannot identify image file for data_id {data_id}. URL: {image_url}")
             img = Image.open('/imgs/placeholder.png')
         w, h = img.size
