@@ -125,7 +125,11 @@ def download_and_resize_image(image_url, data_id, date):
     if resp.status_code != 200:
         print("Failed to download image:", resp.status_code)
     else:
-        img = Image.open(io.BytesIO(resp.content))
+        try:
+            img = Image.open(io.BytesIO(resp.content))
+        except UnidentifiedImageError:
+            print(f"Cannot identify image file for data_id {data_id}. URL: {image_url}")
+            img = Image.open('/imgs/placeholder.png')
         w, h = img.size
         max_side = max(w, h)
         if max_side > 300:
