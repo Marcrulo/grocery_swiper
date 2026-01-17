@@ -120,7 +120,7 @@ def download_and_resize_image(image_url, data_id, date):
     extension = image_url.split("?")[0].split(".")[-1].lower()
     os.makedirs(f"/tmp/imgs/{date}", exist_ok=True)
     filename = f"/tmp/imgs/{date}/{data_id}.{extension}"
-
+    print(image_url)
     resp = requests.get(image_url)
     if resp.status_code != 200:
         print("Failed to download image:", resp.status_code)
