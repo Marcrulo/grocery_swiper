@@ -20,7 +20,7 @@ for file in to_be_processed:
     
     # STEP 1: Load translation model, use it, then delete it
     print("Loading translation model...")
-    translator = pipeline("translation", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
+    translator = pipeline("translation_da_to_en", model="Helsinki-NLP/opus-mt-da-en", device='cpu')
     
     # Translate product names
     translation = translator(df_products['product_name'].values.tolist(), max_length=40)
