@@ -89,8 +89,8 @@ for i, data_id in enumerate(all_ids):
     response = requests.get(data_url)
     time.sleep(1)
     if response.status_code != 200:
-        # assert False, f"Request failed with status code {response.status_code}. Url: {data_url}"
-        products[data_id] = [None]*11
+        # Skip failed requests - don't add them to products dict
+        print(f"Skipping data_id {data_id}: Request failed with status code {response.status_code}")
         continue
     page_props = response.json()['pageProps']
     
