@@ -16,6 +16,8 @@ Blog context (Part 1-3):
 
 Goal: build a growing dataset of grocery items from weekly flyers.
 
+![Flyer source (tilbudsugen.dk)](https://marcrulo.github.io/MonthlyProjects/assets/images/grocery_swiper/tilbudsugen.png)
+
 What happens:
 - Scrape flyer items from tilbudsugen.dk, including hidden metadata exposed in JSON payloads.
 - Save raw data as CSV, download images, and create enriched item features.
@@ -30,6 +32,8 @@ Where in code:
 ## Step 2: Swipe app to gather preferences 📱
 
 Goal: collect like/pass/super-like labels from real users.
+
+![Swipe app UI](https://marcrulo.github.io/MonthlyProjects/assets/images/grocery_swiper/app.png)
 
 What happens:
 - A lightweight web app mimics a mobile swipe experience.
@@ -46,6 +50,8 @@ Where in code:
 ## Step 3: Recommender + email notifications 🤖
 
 Goal: learn preferences from the swipe data, rank new items, and send weekly recommendations.
+
+![Recommendation email example](https://marcrulo.github.io/MonthlyProjects/assets/images/grocery_swiper/notification.png)
 
 What happens:
 - Train a preference model on engineered features (price + categorical fields).
